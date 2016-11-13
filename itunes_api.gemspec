@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['mariodarco78@icloud.com']
   spec.summary       = 'iTunes Api'
   spec.description   = 'An interface to the iTunes Api'
-  spec.homepage      = 'https://rubygems.org/gems/itunes_api'
+  spec.homepage      = 'https://github.com/mariodarco/itunes-api'
   spec.license       = 'MIT'
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
