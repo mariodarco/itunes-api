@@ -1,8 +1,7 @@
-require 'itunes_api/version'
+require 'itunes_api/all'
 
 # Interface to the Itunes Api
 module ItunesApi
-  def self.version
-    VERSION
-  end
+  COUNTRY_CODE = 'GB'.freeze
+  BASE_URL = 'https://itunes.apple.com'.freeze
 end
