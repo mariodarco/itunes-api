@@ -1,19 +1,13 @@
 require 'spec_helper'
+require 'itunes_api/shared'
 
 describe ItunesApi::Request do
+  include_context 'api_requests'
+
   let(:instance) { ItunesApi::Music::Album.new([artist_id]) }
 
   let(:artist_id)   { 1 }
-  let(:json_data)   { parsed_data.to_json }
   let(:parsed_data) { { 'results' => { 'data' => 'value' } } }
-  let(:opened_url)  { double(StringIO) }
-  let(:url)         { 'https://example.apple.com' }
-
-  before do
-    allow(instance).to receive(:url).and_return url
-    allow(instance).to receive(:open).with(url).and_return opened_url
-    allow(opened_url).to receive(:read).and_return json_data
-  end
 
   describe '#request' do
     subject { instance.request }
