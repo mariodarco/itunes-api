@@ -4,39 +4,81 @@ require 'itunes_api/shared'
 describe ItunesApi::Music::Artist do
   include_context 'api_requests'
 
-  let(:instance) { described_class.new([artist_name]) }
+  let(:instance) { described_class.new(artist_name, apple_id) }
 
-  let(:artist_name)   { 'Abba' }
-  let(:retrieved_ids) { [66, 99] }
-
+  let(:apple_id)    { 99 }
+  let(:artist_name) { 'ABBA' }
+  
   let(:parsed_data) do
+    { 'results' => [result_1, result_2, result_3, result_4] }
+  end
+
+  let(:result_1) do
     {
-      'results' => [
-        { 'artistId' => 66 },
-        { 'artistId' => 99 }
-      ]
+      'artistId' => 66,
+      'collectionType' => 'Album',
+      'collectionId' => 1,
+      'collectionName' => 'Very Bad Album',
+      'releaseDate' => '2015-11-13'
     }
   end
 
-  describe '.apple_ids' do
-    subject { described_class.apple_ids(artist_name) }
+  let(:result_2) do
+    {
+      'artistId' => 99,
+      'collectionType' => 'Album',
+      'collectionId' => 2,
+      'collectionName' => 'First Album',
+      'releaseDate' => '2014-10-12'
+    }
+  end
 
-    it 'calls apple_ids on a new instance of Artist' do
-      expect(described_class)
-        .to receive(:new)
-        .with(artist_name)
-        .and_return instance
-      expect(instance)
-        .to receive(:apple_ids)
-        .and_return retrieved_ids
+  let(:result_3) do
+    {
+      'artistId' => 99,
+      'collectionType' => 'Other',
+      'collectionId' => 3,
+      'collectionName' => 'What is this?',
+      'releaseDate' => '2000-01-01'
+    }
+  end
 
-      subject
+  let(:result_4) do
+    {
+      'artistId' => 99,
+      'collectionType' => 'Album',
+      'collectionId' => 4,
+      'collectionName' => 'Second Album',
+      'releaseDate' => '2016-10-17'
+    }
+  end
+
+  describe '#albums' do
+    subject { instance.albums }
+
+    it 'creates instance of the artist albums, sorted by most recent' do
+      expect(subject.map(&:name)).to eql ['Second Album', 'First Album']
+    end
+
+    context 'when no apple id is given' do
+      let(:apple_id) { nil }
+
+      it 'creates instance of all albums, sorted by most recent' do
+        expect(subject.map(&:name))
+          .to eql ['Second Album', 'Very Bad Album', 'First Album']
+      end
     end
   end
 
   describe '#apple_ids' do
     subject { instance.apple_ids }
 
-    it { is_expected.to eql retrieved_ids }
+    it { is_expected.to eql [99] }
+
+    context 'when no apple id is given' do
+      let(:apple_id) { nil }
+
+      it { is_expected.to eql [66, 99] }
+    end
   end
 end

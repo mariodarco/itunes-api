@@ -4,57 +4,71 @@ require 'itunes_api/shared'
 describe ItunesApi::Music::Album do
   include_context 'api_requests'
 
-  let(:instance) { described_class.new([artist_id]) }
+  let(:instance) { described_class.new(album_name, filtering_options) }
 
-  let(:artist_id)     { 1 }
-  let(:info)          { [info_album_second, info_album_first] }
-  let(:info_playlist) { { 'collectionType' => 'Playlist' } }
-
-  let(:info_album_first) do
+  let(:album_name) { 'Gold' }
+  let(:filtering_options) do
     {
-      'collectionType' => 'Album',
-      'name' => 'First',
-      'releaseDate' => '2015-11-13'
-    }
-  end
-
-  let(:info_album_second) do
-    {
-      'collectionType' => 'Album',
-      'name' => 'Second',
-      'releaseDate' => '2016-11-14'
+      apple_id: 66,
+      album_id: 2
     }
   end
 
   let(:parsed_data) do
+    { 'results' => [track_1, track_2, track_3, track_4] }
+  end
+
+  let(:track_1) do
     {
-      'results' => [info_album_first, info_album_second, info_playlist]
+      'artistId' => 99,
+      'collectionId' => 1,
+      'isStreamable' => true,
+      'trackNumber' => 1
     }
   end
 
-  it 'has a type' do
-    expect(ItunesApi::Music::Album::TYPE).to eq 'Album'
+  let(:track_2) do
+    {
+      'artistId' => 66,
+      'collectionId' => 2,
+      'isStreamable' => true,
+      'trackNumber' => 2
+    }
   end
 
-  describe '.info' do
-    subject { described_class.info([artist_id]) }
+  let(:track_3) do
+    {
+      'artistId' => 66,
+      'collectionId' => 3,
+      'isStreamable' => false,
+      'trackNumber' => 3
+    }
+  end
 
-    it 'calls info on a new instance of Album' do
-      expect(described_class)
-        .to receive(:new)
-        .with([artist_id])
-        .and_return instance
-      expect(instance)
-        .to receive(:info)
-        .and_return info
+  let(:track_4) do
+    {
+      'artistId' => 66,
+      'collectionId' => 2,
+      'isStreamable' => true,
+      'trackNumber' => 4
+    }
+  end
 
-      subject
+  describe '#tracks' do
+    subject { instance.tracks }
+
+    it { is_expected.to eql [track_2, track_4] }
+  end
+
+  describe '#apple_music?' do
+    subject { instance.apple_music? }
+
+    it { is_expected.to be true }
+
+    context 'when album is not streamable' do
+      let(:filtering_options) { { album_id: 3 } }
+
+      it { is_expected.to be false }
     end
-  end
-
-  describe '#info' do
-    subject { instance.info }
-
-    it { is_expected.to eql info }
   end
 end

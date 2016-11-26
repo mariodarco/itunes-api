@@ -1,39 +1,46 @@
 module ItunesApi
   module Music
-    # Use to retrieve available albums from artist's ids.
+    # Retrieves album tracks info.
     class Album
+      attr_accessor :name
       include Request
 
-      TYPE = 'Album'.freeze
-
-      def initialize(artists_id)
-        @artists_id = artists_id
+      def initialize(name, filtering_options = {})
+        @name = name
+        @filtering_options = filtering_options
       end
 
-      def self.info(artists_id)
-        new(artists_id).info
+      def tracks
+        @tracks ||= filtered_results.sort_by { |track| track['trackNumber'] }
       end
 
-      def info
-        @info ||= results
-                  .find_all { |r| r['collectionType'] == TYPE }
-                  .sort_by { |a| a['releaseDate'] }
-                  .reverse
+      def apple_music?
+        tracks.any? { |track| track['isStreamable'] }
       end
 
       private
 
-      def url
-        "#{BASE_URL}/lookup?id=#{all_artists_id}&" \
-        "entity=#{entity}&country=#{COUNTRY_CODE}"
+      def album_id
+        @album_id ||= @filtering_options[:album_id]
       end
 
-      def all_artists_id
-        @artists_id.join(',')
+      def artist_id
+        @artist_id ||= @filtering_options[:artist_id]
       end
 
-      def entity
-        TYPE.downcase
+      def filtered_results
+        @filtered_results ||= results.find_all do |result|
+          (!album_id || result['collectionId'] == album_id) &&
+            (!artist_id || result['artistId'] == artist_id)
+        end
+      end
+
+      def query_values
+        {
+          attribute: 'albumTerm',
+          entity: 'musicTrack',
+          term: name
+        }.merge(super)
       end
     end
   end
