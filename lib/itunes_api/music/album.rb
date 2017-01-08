@@ -2,36 +2,34 @@ module ItunesApi
   module Music
     # Retrieves album tracks info.
     class Album
-      attr_accessor :name
+      attr_accessor :name, :artwork, :track_count, :release_date
       include Request
 
-      def initialize(name, filtering_options = {})
-        @name = name
-        @filtering_options = filtering_options
+      def initialize(info)
+        @name = info['collectionName']
+        @album_id = info['collectionId']
+        @artwork = info['artworkUrl100']
+        @track_count = info['trackCount']
+        @release_date = Date.parse(info['releaseDate'])
+      end
+
+      def apple_music?
+        streamable_tracks.any?
+      end
+
+      def streamable_tracks
+        tracks.select { |track| track['isStreamable'] }
       end
 
       def tracks
         @tracks ||= filtered_results.sort_by { |track| track['trackNumber'] }
       end
 
-      def apple_music?
-        tracks.any? { |track| track['isStreamable'] }
-      end
-
       private
-
-      def album_id
-        @album_id ||= @filtering_options[:album_id]
-      end
-
-      def artist_id
-        @artist_id ||= @filtering_options[:artist_id]
-      end
 
       def filtered_results
         @filtered_results ||= results.find_all do |result|
-          (!album_id || result['collectionId'] == album_id) &&
-            (!artist_id || result['artistId'] == artist_id)
+          result['collectionId'] == @album_id
         end
       end
 

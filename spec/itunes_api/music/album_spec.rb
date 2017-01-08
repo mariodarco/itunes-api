@@ -4,71 +4,47 @@ require 'itunes_api/shared'
 describe ItunesApi::Music::Album do
   include_context 'api_requests'
 
-  let(:instance) { described_class.new(album_name, filtering_options) }
+  let(:instance) { described_class.new(info) }
 
-  let(:album_name) { 'Gold' }
-  let(:filtering_options) do
+  let(:results) { [track_1, track_2, track_3, track_4] }
+  let(:parsed_data) { { 'results' => results } }
+
+  let(:info) do
     {
-      apple_id: 66,
-      album_id: 2
-    }
-  end
-
-  let(:parsed_data) do
-    { 'results' => [track_1, track_2, track_3, track_4] }
-  end
-
-  let(:track_1) do
-    {
-      'artistId' => 99,
-      'collectionId' => 1,
-      'isStreamable' => true,
-      'trackNumber' => 1
-    }
-  end
-
-  let(:track_2) do
-    {
-      'artistId' => 66,
+      'collectionName' => 'Gold',
       'collectionId' => 2,
-      'isStreamable' => true,
-      'trackNumber' => 2
+      'artworkUrl100' => 'http://somewhere.com',
+      'trackCount' => '20',
+      'releaseDate' => '2016-12-02'
     }
   end
 
-  let(:track_3) do
-    {
-      'artistId' => 66,
-      'collectionId' => 3,
-      'isStreamable' => false,
-      'trackNumber' => 3
-    }
-  end
-
-  let(:track_4) do
-    {
-      'artistId' => 66,
-      'collectionId' => 2,
-      'isStreamable' => true,
-      'trackNumber' => 4
-    }
-  end
-
-  describe '#tracks' do
-    subject { instance.tracks }
-
-    it { is_expected.to eql [track_2, track_4] }
-  end
+  let(:track_1) { { 'collectionId' => 1, 'isStreamable' => true } }
+  let(:track_2) { { 'collectionId' => 2, 'isStreamable' => true } }
+  let(:track_3) { { 'collectionId' => 3, 'isStreamable' => false } }
+  let(:track_4) { { 'collectionId' => 2, 'isStreamable' => false } }
 
   describe '#apple_music?' do
     subject { instance.apple_music? }
 
     it { is_expected.to be true }
 
-    context 'when album is not streamable' do
-      let(:filtering_options) { { album_id: 3 } }
+    context 'when no track on the album is streamable' do
+      let(:results) { [track_3] }
 
       it { is_expected.to be false }
     end
+  end
+
+  describe '#streamable_tracks' do
+    subject { instance.streamable_tracks }
+
+    it { is_expected.to eql [track_2] }
+  end
+
+  describe '#tracks' do
+    subject { instance.tracks }
+
+    it { is_expected.to eql [track_2, track_4] }
   end
 end

@@ -8,7 +8,7 @@ describe ItunesApi::Music::Artist do
 
   let(:apple_id)    { 99 }
   let(:artist_name) { 'ABBA' }
-  
+
   let(:parsed_data) do
     { 'results' => [result_1, result_2, result_3, result_4] }
   end

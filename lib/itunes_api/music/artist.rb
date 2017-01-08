@@ -8,7 +8,7 @@ module ItunesApi
 
       def initialize(artist_name, apple_id = nil)
         @artist_name = artist_name
-        @apple_id = apple_id
+        @apple_id = normalize(apple_id.to_i)
       end
 
       def albums(limit = 3)
@@ -16,32 +16,31 @@ module ItunesApi
                     .sort_by { |result| result['releaseDate'] }
                     .reverse
                     .first(limit)
-                    .map { |result| album(result) }
+                    .map { |info| Album.new(info) }
+      end
+
+      def normalize(apple_id)
+        apple_id.zero? ? nil : apple_id
       end
 
       def apple_ids
-        @apple_ids ||= filtered_results.collect do |album|
+        return [@apple_id] if @apple_id
+
+        @apple_ids ||= filtered_albums.collect do |album|
           album['artistId']
         end.compact.uniq.sort
       end
 
       private
 
-      def filtered_results
-        results.find_all do |result|
-          result['collectionType'] == 'Album' &&
-            (!@apple_id || result['artistId'] == @apple_id)
-        end
+      def filtered_albums
+        results.find_all { |result| result['collectionType'] == 'Album' }
       end
 
-      def album(result)
-        Album.new(
-          result['collectionName'],
-          {
-            artist_id: @apple_id,
-            album_id: result['collectionId']
-          }
-        )
+      def filtered_results
+        filtered_albums.find_all do |album|
+          (!@apple_id || album['artistId'] == @apple_id)
+        end
       end
 
       def query_values
