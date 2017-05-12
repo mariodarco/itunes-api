@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/mariodarco/itunes-api/tree/master.svg?style=shield)](https://circleci.com/gh/mariodarco/itunes-api/tree/master)
+
+
 # ItunesApi
 
 A simple interface for the Itunes Api.
