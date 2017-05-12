@@ -11,16 +11,11 @@ module ItunesApi
         @apple_id = normalize(apple_id.to_i)
       end
 
-      def albums(limit = 3)
+      def albums
         @albums ||= filtered_results
                     .sort_by { |result| result['releaseDate'] }
                     .reverse
-                    .first(limit)
                     .map { |info| Album.new(info) }
-      end
-
-      def normalize(apple_id)
-        apple_id.zero? ? nil : apple_id
       end
 
       def apple_ids
@@ -41,6 +36,10 @@ module ItunesApi
         filtered_albums.find_all do |album|
           (!@apple_id || album['artistId'] == @apple_id)
         end
+      end
+
+      def normalize(apple_id)
+        apple_id.zero? ? nil : apple_id
       end
 
       def query_values

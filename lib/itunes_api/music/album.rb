@@ -2,7 +2,7 @@ module ItunesApi
   module Music
     # Retrieves album tracks info.
     class Album
-      attr_accessor :name, :artwork, :track_count, :release_date
+      attr_reader :name, :artwork, :track_count, :release_date
       include Request
 
       def initialize(info)
