@@ -1,3 +1,3 @@
 module ItunesApi
-  VERSION = '0.2.0'.freeze
+  VERSION = '0.2.9'
 end
