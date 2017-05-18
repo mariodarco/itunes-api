@@ -13,21 +13,37 @@ module ItunesApi
       end
 
       def artist_with_albums
-        artist_data.merge({ albums: albums_data })
+        artist.merge(albums: albums)
       end
 
       private
+
+      def action
+        'lookup'
+      end
+
+      def albums
+        albums_data.map do |album|
+          symbolize_keys(unwrapped(album))
+        end
+      end
 
       def albums_data
         results.find_all { |wrappers| wrappers['wrapperType'] == 'collection' }
       end
 
-      def artist_data
-        results.find { |wrappers| wrappers['wrapperType'] == 'artist' }
+      def artist
+        symbolize_keys(unwrapped(artist_data))
       end
 
-      def action
-        'lookup'
+      def artist_data
+        symbolize_keys(
+          unwrapped(
+            results.find do |wrappers|
+              wrappers['wrapperType'] == 'artist'
+            end
+          )
+        )
       end
 
       def query_values
@@ -38,6 +54,11 @@ module ItunesApi
           limit: LIMIT,
           sort: 'recent'
         }
+      end
+
+      def unwrapped(hash)
+        hash.delete('wrapperType')
+        hash
       end
     end
   end

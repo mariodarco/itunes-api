@@ -7,15 +7,15 @@ require 'itunes_api/music/artist_search'
 
 # Interface to the Itunes Api
 module ItunesApi
-  BASE_URL = 'https://itunes.apple.com'
-  COUNTRY_CODE = 'GB'
+  BASE_URL = 'https://itunes.apple.com'.freeze
+  COUNTRY_CODE = 'GB'.freeze
   LIMIT = 200
 
   def self.artist_ids(name)
-    Requests::Search.new(name).artist_ids
+    Requests::Search.artist_ids(name)
   end
 
   def self.artist_search(name)
-    ItunesApi::Music::ArtistSearch.artists(name)
+    Music::ArtistSearch.artists(name)
   end
 end

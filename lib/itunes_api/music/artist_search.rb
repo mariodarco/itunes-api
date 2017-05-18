@@ -1,10 +1,7 @@
-require 'active_model'
-
 module ItunesApi
   module Music
     # Artists or Bands resulting from a search
     class ArtistSearch
-
       def initialize(name)
         @name = name
       end

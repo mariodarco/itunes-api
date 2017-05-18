@@ -1,5 +1,6 @@
 module ItunesApi
   module Music
+    # Wrapper for album results.
     class Album
       attr_reader :name, :artwork, :released
 

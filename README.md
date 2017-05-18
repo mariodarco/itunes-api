@@ -27,7 +27,15 @@ $ gem install itunes_api
 
 ## Usage
 
-TODO: Write usage instructions here
+To return all the AMG ids associated with a search term.
+```ruby
+ItunesApi.artist_ids('Pink Floyd')
+```
+
+To return structured information abut artists and albums associated with a search term.
+```ruby
+ItunesApi.artist_ids('Pink Floyd')
+```
 
 ## Development
 

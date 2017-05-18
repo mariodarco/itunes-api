@@ -1,6 +1,7 @@
 require 'addressable/uri'
 module ItunesApi
   module Requests
+    # Fetch all the artist ids corresponding to a search term
     class Search
       include Base
 
