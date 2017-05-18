@@ -34,7 +34,7 @@ ItunesApi.artist_ids('Pink Floyd')
 
 To return structured information abut artists and albums associated with a search term.
 ```ruby
-ItunesApi.artist_ids('Pink Floyd')
+ItunesApi.artist_search('Pink Floyd')
 ```
 
 ## Development
