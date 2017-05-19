@@ -3,9 +3,7 @@ module ItunesApi
     # Wrapper for album results.
     class Album
       def initialize(data)
-        @name = data['collectionName']
-        @artwork = data['artworkUrl100']
-        @released = Date.parse(data['releaseDate'])
+        @data = data
       end
 
       def self.build(albums_data)

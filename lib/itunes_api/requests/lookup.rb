@@ -37,13 +37,9 @@ module ItunesApi
       end
 
       def artist_data
-        symbolize_keys(
-          unwrapped(
-            results.find do |wrappers|
-              wrappers['wrapperType'] == 'artist'
-            end
-          )
-        )
+        results.find do |wrappers|
+          wrappers['wrapperType'] == 'artist'
+        end
       end
 
       def query_values
