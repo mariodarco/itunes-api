@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ItunesApi::Requests::Lookup do
   let(:instance) { described_class.new(artist_id) }
 
-  let(:artist_id) { 85934 }
+  let(:artist_id) { '85934' }
 
   describe '#artist_with_albums' do
     subject do

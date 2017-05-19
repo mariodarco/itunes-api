@@ -32,7 +32,12 @@ To return all the AMG ids associated with a search term.
 ItunesApi.artist_ids('Pink Floyd')
 ```
 
-To return structured information abut artists and albums associated with a search term.
+To return a specific artist with albums, based on the AMG id.
+```ruby
+ItunesApi.artist_lookup(12345)
+```
+
+To get all artists returning from a search term, and their albums.
 ```ruby
 ItunesApi.artist_search('Pink Floyd')
 ```

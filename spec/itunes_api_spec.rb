@@ -25,12 +25,24 @@ describe ItunesApi do
     end
   end
 
+  describe '.artist_lookup' do
+    subject { described_class.artist_lookup(id) }
+
+    let(:id) { '5555' }
+
+    it 'delegates the ArtistLookup class to retrieve artist from the query' do
+      expect(ItunesApi::Music::ArtistLookup).to receive(:artist).with(id)
+
+      subject
+    end
+  end
+
   describe '.artist_search' do
     subject { described_class.artist_search(name) }
 
     let(:name) { 'The Beatles' }
 
-    it 'delegates the ArtistSearch class to retrieve artists for the query' do
+    it 'delegates the ArtistSearch class to retrieve artists from the query' do
       expect(ItunesApi::Music::ArtistSearch).to receive(:artists).with(name)
 
       subject

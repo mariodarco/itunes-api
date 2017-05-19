@@ -3,6 +3,7 @@ require 'itunes_api/requests/lookup'
 require 'itunes_api/requests/search'
 require 'itunes_api/music/album'
 require 'itunes_api/music/artist'
+require 'itunes_api/music/artist_lookup'
 require 'itunes_api/music/artist_search'
 
 # Interface to the Itunes Api
@@ -13,6 +14,10 @@ module ItunesApi
 
   def self.artist_ids(name)
     Requests::Search.artist_ids(name)
+  end
+
+  def self.artist_lookup(artist_id)
+    Music::ArtistLookup.artist(artist_id)
   end
 
   def self.artist_search(name)

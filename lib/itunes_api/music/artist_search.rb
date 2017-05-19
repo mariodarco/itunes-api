@@ -16,8 +16,10 @@ module ItunesApi
 
       private
 
+      attr_reader :name
+
       def artist_ids
-        @search ||= ItunesApi.artist_ids(@name)
+        @search ||= ItunesApi.artist_ids(name)
       end
 
       def build_artist(id)
