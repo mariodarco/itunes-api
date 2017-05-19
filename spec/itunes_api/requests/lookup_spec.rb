@@ -14,7 +14,7 @@ describe ItunesApi::Requests::Lookup do
       expect(subject[:artistName]).to eql 'Jimi Hendrix'
     end 
 
-    it 'has an array of albums' do
+    it 'has an array of info about his albums' do
       expect(subject[:albums]).to be_a Array
     end
   end
