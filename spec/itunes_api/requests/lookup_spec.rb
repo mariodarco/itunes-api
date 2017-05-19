@@ -7,15 +7,16 @@ describe ItunesApi::Requests::Lookup do
   let(:instance) { described_class.new(artist_name) }
 
   let(:artist_name) { 'Iron Maiden' }
-  let(:parsed_data) do
+  let(:body) do
     {
       'results' => [
         { 'wrapperType' => 'artist', 'artistName' => 'Iron Maiden' },
         { 'wrapperType' => 'collection', 'albumName' => 'Killers' },
         { 'wrapperType' => 'collection', 'albumName' => 'Iron Maiden' }
       ]
-    }
+    }.to_json
   end
+  let(:request_url) { 'https://itunes.apple.com/lookup?amgArtistId=Iron%20Maiden&country=GB&entity=album&limit=200&sort=recent' }
 
   describe '#artist_with_albums' do
     subject { instance.artist_with_albums }

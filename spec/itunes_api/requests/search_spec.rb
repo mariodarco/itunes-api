@@ -7,13 +7,9 @@ describe ItunesApi::Requests::Search do
   let(:instance) { described_class.new(artist_name) }
 
   let(:artist_name) { 'ABBA' }
-  let(:parsed_data) do
-    {
-      'results' => [
-        { 'amgArtistId' => 999 },
-        { 'amgArtistId' => 969 }
-      ]
-    }
+  let(:body) { '{"results":[{"amgArtistId":999},{"amgArtistId":969}]}' }
+  let(:request_url) do
+    'https://itunes.apple.com/search?attribute=artistTerm&country=GB&entity=album&limit=200&media=music&sort=recent&term=ABBA'
   end
 
   describe '#artist_ids' do

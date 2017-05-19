@@ -1,14 +1,19 @@
 require 'spec_helper'
 
 RSpec.shared_context 'api_requests', shared_context: :metadata do
-  let(:json_data)   { parsed_data.to_json }
-  let(:opened_url)  { double(StringIO) }
-  let(:url)         { 'https://example.apple.com' }
+  let(:body) { '' }
+  let(:headers) do
+    {
+      'Accept' => '*/*',
+      'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+      'User-Agent' => 'Ruby'
+    }
+  end
+  let(:request_url) { 'http://example.com' }
 
   before do
-    allow(instance).to receive(:url).and_return url
-    allow(instance).to receive(:open).with(url).and_return opened_url
-    allow(opened_url).to receive(:read).and_return json_data
-    allow(JSON).to receive(:parse).with(json_data).and_return parsed_data
+    WebMock.stub_request(:get, request_url)
+           .with(headers: headers)
+           .to_return(body: body)
   end
 end
