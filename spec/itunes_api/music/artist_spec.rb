@@ -5,17 +5,17 @@ describe ItunesApi::Music::Artist do
 
   let(:album_data) do
     {
-      'collectionName' => 'The Wall',
-      'artworkUrl100' => 'http://example.com/tw.jpg',
-      'releaseDate' => '1979-11-30'
+      collectionName: 'The Wall',
+      artworkUrl100: 'http://example.com/tw.jpg',
+      releaseDate: '1979-11-30'
     }
   end
 
   let(:artist_data) do
     {
-      'artistName' => 'Pink Floyd',
-      'amgArtistId' => 5959,
-      :albums => [album_data]
+      artistName: 'Pink Floyd',
+      amgArtistId: 5959,
+      albums: [album_data]
     }
   end
 
@@ -26,8 +26,8 @@ describe ItunesApi::Music::Artist do
     it { is_expected.to all be_a ItunesApi::Music::Album }
   end
 
-  describe '#artist_id' do
-    subject { instance.artist_id }
+  describe '#amg_id' do
+    subject { instance.amg_id }
 
     it { is_expected.to eql 5959 }
   end

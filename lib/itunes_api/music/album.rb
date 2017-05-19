@@ -11,15 +11,15 @@ module ItunesApi
       end
 
       def artwork
-        @artwork ||= data['artworkUrl100']
+        @artwork ||= data[:artworkUrl100]
       end
 
       def name
-        @name ||= data['collectionName']
+        @name ||= data[:collectionName]
       end
 
       def released
-        @released ||= Date.parse(data['releaseDate'])
+        @released ||= Date.parse(data[:releaseDate])
       end
 
       private

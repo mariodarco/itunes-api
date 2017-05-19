@@ -12,7 +12,7 @@ describe ItunesApi::Requests::Lookup do
 
     it 'returns an hash of results about Jimi Hendrix' do
       expect(subject[:artistName]).to eql 'Jimi Hendrix'
-    end 
+    end
 
     it 'has an array of info about his albums' do
       expect(subject[:albums]).to be_a Array

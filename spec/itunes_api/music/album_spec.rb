@@ -1,13 +1,13 @@
 require 'spec_helper'
 
 describe ItunesApi::Music::Album do
-  let(:instance) { described_class.new(first_album_data) } 
+  let(:instance) { described_class.new(first_album_data) }
 
   let(:first_album_data) do
     {
-      'collectionName' => 'The Dark Side of The Moon',
-      'artworkUrl100' => 'http://example.com/tdsotm.jpg',
-      'releaseDate' => first_date
+      collectionName: 'The Dark Side of The Moon',
+      artworkUrl100: 'http://example.com/tdsotm.jpg',
+      releaseDate: first_date
     }
   end
   let(:first_date) { '1973-03-01' }
@@ -18,9 +18,9 @@ describe ItunesApi::Music::Album do
     let(:albums_data) { [first_album_data, second_album_data] }
     let(:second_album_data) do
       {
-        'collectionName' => 'The Wall',
-        'artworkUrl100' => 'http://example.com/tw.jpg',
-        'releaseDate' => second_date
+        collectionName: 'The Wall',
+        artworkUrl100: 'http://example.com/tw.jpg',
+        releaseDate: second_date
       }
     end
     let(:second_date) { '1979-11-30' }
