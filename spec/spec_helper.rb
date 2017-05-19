@@ -3,6 +3,6 @@ require 'itunes_api'
 require 'vcr'
 
 VCR.configure do |c|
-  c.hook_into Faraday
+  c.hook_into :faraday
   c.cassette_library_dir = 'spec/cassettes'
 end
