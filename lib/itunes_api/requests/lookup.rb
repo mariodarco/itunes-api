@@ -42,7 +42,7 @@ module ItunesApi
         end
       end
 
-      def query_values
+      def query
         {
           entity: 'album',
           amgArtistId: @artist_id,

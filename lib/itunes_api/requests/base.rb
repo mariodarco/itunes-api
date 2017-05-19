@@ -1,27 +1,25 @@
-require 'open-uri'
+require 'faraday'
 require 'json'
 module ItunesApi
   module Requests
     # Allow requests to the iTunes API.
     module Base
       def results
-        response.fetch('results') { [] }
+        @results ||= parsed_response.fetch('results') { [] }
       end
 
       private
 
-      def query
-        Addressable::URI.new(
-          query_values: query_values
-        ).query
+      def parsed_response
+        JSON.parse(response.body)
       end
 
-      def request
-        open(url).read
+      def connection
+        Faraday.new(url: BASE_URL)
       end
 
       def response
-        @response ||= JSON.parse(request)
+        connection.get(action, query)
       end
 
       def symbolize_keys(hash)
@@ -31,9 +29,9 @@ module ItunesApi
         end
       end
 
-      def url
-        "#{BASE_URL}/#{action}?#{query}"
-      end
+      # def url
+      #   "#{BASE_URL}/#{action}?#{query}"
+      # end
     end
   end
 end

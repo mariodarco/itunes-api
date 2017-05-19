@@ -2,74 +2,69 @@
 http_interactions:
 - request:
     method: get
-    uri: https://itunes.apple.com/search?attribute=artistTerm&country=GB&entity=album&limit=200&media=music&sort=recent&term=Jimi%20Hendrix
+    uri: https://itunes.apple.com/search?attribute=artistTerm&country=GB&entity=album&limit=200&media=music&sort=recent&term=Jimi+Hendrix
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
       User-Agent:
-      - Ruby
+      - Faraday v0.11.0
   response:
     status:
       code: 200
-      message: OK
+      message: 
     headers:
-      X-Apple-Jingle-Correlation-Key:
-      - BKEJLQNMWTTSCEBR4Q7ENQNJEI
-      X-Apple-Application-Site:
+      x-apple-jingle-correlation-key:
+      - VHREYTAUVY2OHD6GAUYOUFVUKY
+      x-apple-application-site:
       - ST11
-      Content-Disposition:
+      content-disposition:
       - attachment; filename=1.txt
-      Apple-Originating-System:
+      apple-originating-system:
       - MZStoreServices
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      X-Apple-Translated-Wo-Url:
-      - "/WebObjects/MZStoreServices.woa/ws/wsSearch?attribute=artistTerm&country=GB&entity=album&limit=200&media=music&sort=recent&term=Jimi%20Hendrix&urlDesc="
-      Apple-Tk:
+      x-apple-translated-wo-url:
+      - "/WebObjects/MZStoreServices.woa/ws/wsSearch?attribute=artistTerm&country=GB&entity=album&limit=200&media=music&sort=recent&term=Jimi+Hendrix&urlDesc="
+      apple-tk:
       - 'false'
-      X-Apple-Orig-Url:
-      - https://itunes.apple.com/search?attribute=artistTerm&country=GB&entity=album&limit=200&media=music&sort=recent&term=Jimi%20Hendrix
-      Apple-Seq:
+      x-apple-orig-url:
+      - https://itunes.apple.com/search?attribute=artistTerm&country=GB&entity=album&limit=200&media=music&sort=recent&term=Jimi+Hendrix
+      apple-seq:
       - '0'
-      Apple-Timing-App:
-      - 569 ms
-      X-Content-Type-Options:
+      apple-timing-app:
+      - 360 ms
+      x-content-type-options:
       - nosniff
-      Content-Type:
+      content-type:
       - text/javascript; charset=utf-8
-      X-Apple-Application-Instance:
-      - '2000757'
-      X-Webobjects-Loadaverage:
+      x-apple-application-instance:
+      - '2000755'
+      x-webobjects-loadaverage:
       - '0'
-      X-Apple-Request-Uuid:
-      - 0a8895c1-acb4-e721-1031-e43e46c1a922
-      Server:
+      x-apple-request-uuid:
+      - a9e24c4c-14ae-34e3-8fc6-0530ea16b456
+      server:
       - ATS/4.1.0
-      X-Apple-Ats-Cache-Key:
-      - "/17.173.38.169/80/search/browser/https?attribute=artistTerm&country=GB&entity=album&limit=200&media=music&sort=recent&term=Jimi%20Hendrix"
-      Vary:
+      x-apple-ats-cache-key:
+      - "/17.173.38.167/80/search/iDevice/https?attribute=artistTerm&country=GB&entity=album&limit=200&media=music&sort=recent&term=Jimi+Hendrix"
+      vary:
       - Accept-Encoding
-      Cache-Control:
-      - max-age=86355
-      Date:
-      - Fri, 19 May 2017 22:14:51 GMT
-      Transfer-Encoding:
+      cache-control:
+      - max-age=86400
+      date:
+      - Fri, 19 May 2017 22:51:13 GMT
+      transfer-encoding:
       - chunked
-      X-Cache:
-      - TCP_SWAPFAIL_MISS from a195-59-188-71.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      x-cache:
+      - TCP_MISS from a173-222-211-190.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      Connection:
-      - Transfer-Encoding
-      - keep-alive
-      X-Cache-Remote:
-      - TCP_SWAPFAIL_MISS from a195-59-188-70.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      connection:
+      - close, Transfer-Encoding
+      x-cache-remote:
+      - TCP_SWAPFAIL_MISS from a173-222-211-216.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      X-Apple-Partner:
+      x-apple-partner:
       - origin.0
     body:
       encoding: ASCII-8BIT
@@ -1500,7 +1495,7 @@ http_interactions:
         N1QwNzowMDowMFoiLCAicHJpbWFyeUdlbnJlTmFtZSI6IlJvY2sifV0KfQoK
         Cg==
     http_version: 
-  recorded_at: Fri, 19 May 2017 22:14:51 GMT
+  recorded_at: Fri, 19 May 2017 22:51:13 GMT
 - request:
     method: get
     uri: https://itunes.apple.com/lookup?amgArtistId=5298&country=GB&entity=album&limit=200&sort=recent
@@ -1508,69 +1503,64 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
       User-Agent:
-      - Ruby
+      - Faraday v0.11.0
   response:
     status:
       code: 200
-      message: OK
+      message: 
     headers:
-      X-Apple-Jingle-Correlation-Key:
+      x-apple-jingle-correlation-key:
       - 7XSWGFG3XMNUSR3A275E7QF3KM
-      X-Apple-Application-Site:
+      x-apple-application-site:
       - NWK
-      Content-Disposition:
+      content-disposition:
       - attachment; filename=1.txt
-      Apple-Originating-System:
+      apple-originating-system:
       - MZStoreServices
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      X-Apple-Translated-Wo-Url:
+      x-apple-translated-wo-url:
       - "/WebObjects/MZStoreServices.woa/ws/wsLookup?amgArtistId=5298&country=GB&entity=album&limit=200&sort=recent&urlDesc="
-      Apple-Tk:
+      apple-tk:
       - 'false'
-      X-Apple-Orig-Url:
+      x-apple-orig-url:
       - https://itunes.apple.com/lookup?amgArtistId=5298&country=GB&entity=album&limit=200&sort=recent
-      Apple-Seq:
+      apple-seq:
       - '0'
-      Apple-Timing-App:
+      apple-timing-app:
       - 719 ms
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      Content-Type:
+      content-type:
       - text/javascript; charset=utf-8
-      X-Apple-Application-Instance:
+      x-apple-application-instance:
       - '1000315'
-      X-Webobjects-Loadaverage:
+      x-webobjects-loadaverage:
       - '0'
-      X-Apple-Request-Uuid:
+      x-apple-request-uuid:
       - fde56314-dbbb-1b49-4760-d7fa4fc0bb53
-      Server:
+      server:
       - ATS/4.1.0
-      X-Apple-Ats-Cache-Key:
+      x-apple-ats-cache-key:
       - "/17.154.42.218/80/lookup/browser/https?amgArtistId=5298&country=GB&entity=album&limit=200&sort=recent"
-      Vary:
+      vary:
       - Accept-Encoding
-      Cache-Control:
-      - max-age=86400
-      Date:
-      - Fri, 19 May 2017 22:14:52 GMT
-      Transfer-Encoding:
+      cache-control:
+      - max-age=84219
+      date:
+      - Fri, 19 May 2017 22:51:14 GMT
+      transfer-encoding:
       - chunked
-      X-Cache:
-      - TCP_SWAPFAIL_MISS from a195-59-188-71.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      x-cache:
+      - TCP_MISS from a173-222-211-190.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      Connection:
-      - Transfer-Encoding
-      - keep-alive
-      X-Cache-Remote:
-      - TCP_SWAPFAIL_MISS from a195-59-188-72.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      connection:
+      - close, Transfer-Encoding
+      x-cache-remote:
+      - TCP_MISS from a104-103-232-89.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      X-Apple-Partner:
+      x-apple-partner:
       - origin.0
     body:
       encoding: ASCII-8BIT
@@ -3267,7 +3257,7 @@ http_interactions:
         OiJHQlAiLCAicmVsZWFzZURhdGUiOiIyMDA4LTAxLTAxVDA4OjAwOjAwWiIs
         ICJwcmltYXJ5R2VucmVOYW1lIjoiUm9jayJ9XQp9CgoK
     http_version: 
-  recorded_at: Fri, 19 May 2017 22:14:52 GMT
+  recorded_at: Fri, 19 May 2017 22:51:14 GMT
 - request:
     method: get
     uri: https://itunes.apple.com/lookup?amgArtistId=5723&country=GB&entity=album&limit=200&sort=recent
@@ -3275,68 +3265,64 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
       User-Agent:
-      - Ruby
+      - Faraday v0.11.0
   response:
     status:
       code: 200
-      message: OK
+      message: 
     headers:
-      X-Apple-Jingle-Correlation-Key:
-      - UNBGYRLXNHQY7B5KSKLOD5NDZA
-      X-Apple-Application-Site:
-      - ST11
-      Content-Disposition:
+      x-apple-jingle-correlation-key:
+      - BITSFBIRUSQNI7HR3DDD3WELOU
+      x-apple-application-site:
+      - MR22
+      content-disposition:
       - attachment; filename=1.txt
-      Apple-Originating-System:
+      apple-originating-system:
       - MZStoreServices
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      X-Apple-Translated-Wo-Url:
+      x-apple-translated-wo-url:
       - "/WebObjects/MZStoreServices.woa/ws/wsLookup?amgArtistId=5723&country=GB&entity=album&limit=200&sort=recent&urlDesc="
-      Apple-Tk:
+      apple-tk:
       - 'false'
-      X-Apple-Orig-Url:
+      x-apple-orig-url:
       - https://itunes.apple.com/lookup?amgArtistId=5723&country=GB&entity=album&limit=200&sort=recent
-      Apple-Seq:
+      apple-seq:
       - '0'
-      Apple-Timing-App:
-      - 233 ms
-      X-Content-Type-Options:
+      apple-timing-app:
+      - 280 ms
+      x-content-type-options:
       - nosniff
-      Content-Type:
+      content-type:
       - text/javascript; charset=utf-8
-      X-Apple-Application-Instance:
-      - '2001187'
-      X-Webobjects-Loadaverage:
+      x-apple-application-instance:
+      - '4071011'
+      x-webobjects-loadaverage:
       - '0'
-      X-Apple-Request-Uuid:
-      - a3426c45-7769-e18f-87aa-9296e1f5a3c8
-      Server:
+      x-apple-request-uuid:
+      - 0a272285-11a4-a0d4-7cf1-d8c63dd88b75
+      server:
       - ATS/4.1.0
-      X-Apple-Ats-Cache-Key:
-      - "/17.173.38.168/80/lookup/browser/https?amgArtistId=5723&country=GB&entity=album&limit=200&sort=recent"
-      Vary:
+      x-apple-ats-cache-key:
+      - "/17.124.160.227/80/lookup/iDevice/https?amgArtistId=5723&country=GB&entity=album&limit=200&sort=recent"
+      vary:
       - Accept-Encoding
-      Cache-Control:
-      - max-age=86285
-      Date:
-      - Fri, 19 May 2017 22:14:53 GMT
-      Content-Length:
+      cache-control:
+      - max-age=86306
+      date:
+      - Fri, 19 May 2017 22:51:14 GMT
+      content-length:
       - '45717'
-      X-Cache:
-      - TCP_MISS from a195-59-188-71.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      x-cache:
+      - TCP_MISS from a173-222-211-190.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      Connection:
-      - keep-alive
-      X-Cache-Remote:
-      - TCP_SWAPFAIL_MISS from a195-59-188-66.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      connection:
+      - close
+      x-cache-remote:
+      - TCP_MISS from a104-103-232-99.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      X-Apple-Partner:
+      x-apple-partner:
       - origin.0
     body:
       encoding: ASCII-8BIT
@@ -4358,7 +4344,7 @@ http_interactions:
         Y3VycmVuY3kiOiJHQlAiLCAicmVsZWFzZURhdGUiOiIxOTg4LTAxLTAxVDA4
         OjAwOjAwWiIsICJwcmltYXJ5R2VucmVOYW1lIjoiUm9jayJ9XQp9CgoK
     http_version: 
-  recorded_at: Fri, 19 May 2017 22:14:53 GMT
+  recorded_at: Fri, 19 May 2017 22:51:14 GMT
 - request:
     method: get
     uri: https://itunes.apple.com/lookup?amgArtistId=74578&country=GB&entity=album&limit=200&sort=recent
@@ -4366,68 +4352,64 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
       User-Agent:
-      - Ruby
+      - Faraday v0.11.0
   response:
     status:
       code: 200
-      message: OK
+      message: 
     headers:
-      X-Apple-Jingle-Correlation-Key:
-      - Z6I5YFKETF6KUYB2MGY44SBGVA
-      X-Apple-Application-Site:
-      - ST11
-      Content-Disposition:
+      x-apple-jingle-correlation-key:
+      - ANUAPBEZ2XUFOM77Y7W3XK526U
+      x-apple-application-site:
+      - MR22
+      content-disposition:
       - attachment; filename=1.txt
-      Apple-Originating-System:
+      apple-originating-system:
       - MZStoreServices
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      X-Apple-Translated-Wo-Url:
+      x-apple-translated-wo-url:
       - "/WebObjects/MZStoreServices.woa/ws/wsLookup?amgArtistId=74578&country=GB&entity=album&limit=200&sort=recent&urlDesc="
-      Apple-Tk:
+      apple-tk:
       - 'false'
-      X-Apple-Orig-Url:
+      x-apple-orig-url:
       - https://itunes.apple.com/lookup?amgArtistId=74578&country=GB&entity=album&limit=200&sort=recent
-      Apple-Seq:
+      apple-seq:
       - '0'
-      Apple-Timing-App:
-      - 238 ms
-      X-Content-Type-Options:
+      apple-timing-app:
+      - 161 ms
+      x-content-type-options:
       - nosniff
-      Content-Type:
+      content-type:
       - text/javascript; charset=utf-8
-      X-Apple-Application-Instance:
-      - '2000899'
-      X-Webobjects-Loadaverage:
+      x-apple-application-instance:
+      - '4035000'
+      x-webobjects-loadaverage:
       - '0'
-      X-Apple-Request-Uuid:
-      - cf91dc15-4499-7caa-603a-61b1ce4826a8
-      Server:
+      x-apple-request-uuid:
+      - '03680784-99d5-e857-33ff-c7edbbabbaf5'
+      server:
       - ATS/4.1.0
-      X-Apple-Ats-Cache-Key:
-      - "/17.173.38.169/80/lookup/browser/https?amgArtistId=74578&country=GB&entity=album&limit=200&sort=recent"
-      Vary:
+      x-apple-ats-cache-key:
+      - "/17.124.168.179/80/lookup/iDevice/https?amgArtistId=74578&country=GB&entity=album&limit=200&sort=recent"
+      vary:
       - Accept-Encoding
-      Cache-Control:
-      - max-age=86383
-      Date:
-      - Fri, 19 May 2017 22:14:54 GMT
-      Content-Length:
+      cache-control:
+      - max-age=86249
+      date:
+      - Fri, 19 May 2017 22:51:14 GMT
+      content-length:
       - '25165'
-      X-Cache:
-      - TCP_SWAPFAIL_MISS from a195-59-188-71.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      x-cache:
+      - TCP_MISS from a173-222-211-212.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      Connection:
-      - keep-alive
-      X-Cache-Remote:
-      - TCP_SWAPFAIL_MISS from a195-59-188-72.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      connection:
+      - close
+      x-cache-remote:
+      - TCP_HIT from a104-103-232-81.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      X-Apple-Partner:
+      x-apple-partner:
       - origin.0
     body:
       encoding: ASCII-8BIT
@@ -4993,7 +4975,7 @@ http_interactions:
         MS0wMVQwODowMDowMFoiLCAicHJpbWFyeUdlbnJlTmFtZSI6IlNvdW5kdHJh
         Y2sifV0KfQoKCg==
     http_version: 
-  recorded_at: Fri, 19 May 2017 22:14:54 GMT
+  recorded_at: Fri, 19 May 2017 22:51:14 GMT
 - request:
     method: get
     uri: https://itunes.apple.com/lookup?amgArtistId=85934&country=GB&entity=album&limit=200&sort=recent
@@ -5001,68 +4983,64 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
       User-Agent:
-      - Ruby
+      - Faraday v0.11.0
   response:
     status:
       code: 200
-      message: OK
+      message: 
     headers:
-      X-Apple-Jingle-Correlation-Key:
-      - O6DR42RSV7UMVIVUWZMFQK7TLU
-      X-Apple-Application-Site:
-      - NWK
-      Content-Disposition:
+      x-apple-jingle-correlation-key:
+      - 73UVY7CYGK262AGREWICS2VPXA
+      x-apple-application-site:
+      - ST11
+      content-disposition:
       - attachment; filename=1.txt
-      Apple-Originating-System:
+      apple-originating-system:
       - MZStoreServices
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      X-Apple-Translated-Wo-Url:
+      x-apple-translated-wo-url:
       - "/WebObjects/MZStoreServices.woa/ws/wsLookup?amgArtistId=85934&country=GB&entity=album&limit=200&sort=recent&urlDesc="
-      Apple-Tk:
+      apple-tk:
       - 'false'
-      X-Apple-Orig-Url:
+      x-apple-orig-url:
       - https://itunes.apple.com/lookup?amgArtistId=85934&country=GB&entity=album&limit=200&sort=recent
-      Apple-Seq:
+      apple-seq:
       - '0'
-      Apple-Timing-App:
-      - 365 ms
-      X-Content-Type-Options:
+      apple-timing-app:
+      - 384 ms
+      x-content-type-options:
       - nosniff
-      Content-Type:
+      content-type:
       - text/javascript; charset=utf-8
-      X-Apple-Application-Instance:
-      - '1001232'
-      X-Webobjects-Loadaverage:
+      x-apple-application-instance:
+      - '2001556'
+      x-webobjects-loadaverage:
       - '0'
-      X-Apple-Request-Uuid:
-      - 77871e6a-32af-e8ca-a2b4-b658582bf35d
-      Server:
+      x-apple-request-uuid:
+      - fee95c7c-5832-b5ed-00d1-2590296aafb8
+      server:
       - ATS/4.1.0
-      X-Apple-Ats-Cache-Key:
-      - "/17.154.42.219/80/lookup/browser/https?amgArtistId=85934&country=GB&entity=album&limit=200&sort=recent"
-      Vary:
+      x-apple-ats-cache-key:
+      - "/17.173.38.168/80/lookup/browser/https?amgArtistId=85934&country=GB&entity=album&limit=200&sort=recent"
+      vary:
       - Accept-Encoding
-      Cache-Control:
-      - max-age=86373
-      Date:
-      - Fri, 19 May 2017 22:14:55 GMT
-      Content-Length:
+      cache-control:
+      - max-age=84519
+      date:
+      - Fri, 19 May 2017 22:51:14 GMT
+      content-length:
       - '34973'
-      X-Cache:
-      - TCP_MISS from a195-59-188-71.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      x-cache:
+      - TCP_MISS from a173-222-211-212.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      Connection:
-      - keep-alive
-      X-Cache-Remote:
-      - TCP_SWAPFAIL_MISS from a104-103-232-171.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      connection:
+      - close
+      x-cache-remote:
+      - TCP_SWAPFAIL_MISS from a104-103-232-81.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      X-Apple-Partner:
+      x-apple-partner:
       - origin.0
     body:
       encoding: ASCII-8BIT
@@ -5846,7 +5824,7 @@ http_interactions:
         MTAtMDEtMDFUMDg6MDA6MDBaIiwgInByaW1hcnlHZW5yZU5hbWUiOiJSb2Nr
         In1dCn0KCgo=
     http_version: 
-  recorded_at: Fri, 19 May 2017 22:14:55 GMT
+  recorded_at: Fri, 19 May 2017 22:51:14 GMT
 - request:
     method: get
     uri: https://itunes.apple.com/lookup?amgArtistId=295992&country=GB&entity=album&limit=200&sort=recent
@@ -5854,68 +5832,64 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
       User-Agent:
-      - Ruby
+      - Faraday v0.11.0
   response:
     status:
       code: 200
-      message: OK
+      message: 
     headers:
-      X-Apple-Jingle-Correlation-Key:
+      x-apple-jingle-correlation-key:
       - 3L7JXLVJPVOPIO3MAAYOWUOVY4
-      X-Apple-Application-Site:
+      x-apple-application-site:
       - MR22
-      Content-Disposition:
+      content-disposition:
       - attachment; filename=1.txt
-      Apple-Originating-System:
+      apple-originating-system:
       - MZStoreServices
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      X-Apple-Translated-Wo-Url:
+      x-apple-translated-wo-url:
       - "/WebObjects/MZStoreServices.woa/ws/wsLookup?amgArtistId=295992&country=GB&entity=album&limit=200&sort=recent&urlDesc="
-      Apple-Tk:
+      apple-tk:
       - 'false'
-      X-Apple-Orig-Url:
+      x-apple-orig-url:
       - https://itunes.apple.com/lookup?amgArtistId=295992&country=GB&entity=album&limit=200&sort=recent
-      Apple-Seq:
+      apple-seq:
       - '0'
-      Apple-Timing-App:
+      apple-timing-app:
       - 159 ms
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      Content-Type:
+      content-type:
       - text/javascript; charset=utf-8
-      X-Apple-Application-Instance:
+      x-apple-application-instance:
       - '4019010'
-      X-Webobjects-Loadaverage:
+      x-webobjects-loadaverage:
       - '0'
-      X-Apple-Request-Uuid:
+      x-apple-request-uuid:
       - dafe9bae-a97d-5cf4-3b6c-0030eb51d5c7
-      Server:
+      server:
       - ATS/4.1.0
-      X-Apple-Ats-Cache-Key:
+      x-apple-ats-cache-key:
       - "/17.124.160.228/80/lookup/browser/https?amgArtistId=295992&country=GB&entity=album&limit=200&sort=recent"
-      Vary:
+      vary:
       - Accept-Encoding
-      Cache-Control:
-      - max-age=86384
-      Date:
-      - Fri, 19 May 2017 22:14:55 GMT
-      Content-Length:
+      cache-control:
+      - max-age=84223
+      date:
+      - Fri, 19 May 2017 22:51:14 GMT
+      content-length:
       - '38638'
-      X-Cache:
-      - TCP_MISS from a195-59-188-71.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      x-cache:
+      - TCP_MISS from a173-222-211-212.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      Connection:
-      - keep-alive
-      X-Cache-Remote:
-      - TCP_SWAPFAIL_MISS from a195-59-188-70.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      connection:
+      - close
+      x-cache-remote:
+      - TCP_MISS from a104-103-232-90.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      X-Apple-Partner:
+      x-apple-partner:
       - origin.0
     body:
       encoding: ASCII-8BIT
@@ -6780,5 +6754,5 @@ http_interactions:
         UCIsICJyZWxlYXNlRGF0ZSI6IjIwMDYtMDUtMzBUMDc6MDA6MDBaIiwgInBy
         aW1hcnlHZW5yZU5hbWUiOiJQb3AifV0KfQoKCg==
     http_version: 
-  recorded_at: Fri, 19 May 2017 22:14:55 GMT
+  recorded_at: Fri, 19 May 2017 22:51:14 GMT
 recorded_with: VCR 3.0.3

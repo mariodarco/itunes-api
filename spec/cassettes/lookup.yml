@@ -7,68 +7,61 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
       User-Agent:
-      - Ruby
+      - Faraday v0.11.0
   response:
     status:
       code: 200
-      message: OK
+      message: 
     headers:
-      X-Apple-Jingle-Correlation-Key:
-      - Z733IL34ZCCMMN5E3YND2MUE54
-      X-Apple-Application-Site:
-      - NWK
-      Content-Disposition:
+      x-apple-jingle-correlation-key:
+      - 73UVY7CYGK262AGREWICS2VPXA
+      x-apple-application-site:
+      - ST11
+      content-disposition:
       - attachment; filename=1.txt
-      Apple-Originating-System:
+      apple-originating-system:
       - MZStoreServices
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      X-Apple-Translated-Wo-Url:
+      x-apple-translated-wo-url:
       - "/WebObjects/MZStoreServices.woa/ws/wsLookup?amgArtistId=85934&country=GB&entity=album&limit=200&sort=recent&urlDesc="
-      Apple-Tk:
+      apple-tk:
       - 'false'
-      X-Apple-Orig-Url:
+      x-apple-orig-url:
       - https://itunes.apple.com/lookup?amgArtistId=85934&country=GB&entity=album&limit=200&sort=recent
-      Apple-Seq:
+      apple-seq:
       - '0'
-      Apple-Timing-App:
-      - 308 ms
-      X-Content-Type-Options:
+      apple-timing-app:
+      - 384 ms
+      x-content-type-options:
       - nosniff
-      Content-Type:
+      content-type:
       - text/javascript; charset=utf-8
-      X-Apple-Application-Instance:
-      - '1000434'
-      X-Webobjects-Loadaverage:
+      x-apple-application-instance:
+      - '2001556'
+      x-webobjects-loadaverage:
       - '0'
-      X-Apple-Request-Uuid:
-      - cff7b42f-7cc8-84c6-37a4-de1a3d3284ef
-      Server:
+      x-apple-request-uuid:
+      - fee95c7c-5832-b5ed-00d1-2590296aafb8
+      server:
       - ATS/4.1.0
-      X-Apple-Ats-Cache-Key:
-      - "/17.154.42.217/80/lookup/browser/https?amgArtistId=85934&country=GB&entity=album&limit=200&sort=recent"
-      Vary:
+      x-apple-ats-cache-key:
+      - "/17.173.38.168/80/lookup/browser/https?amgArtistId=85934&country=GB&entity=album&limit=200&sort=recent"
+      vary:
       - Accept-Encoding
-      Cache-Control:
-      - max-age=86264
-      Date:
-      - Fri, 19 May 2017 15:26:16 GMT
-      Content-Length:
+      cache-control:
+      - max-age=84560
+      date:
+      - Fri, 19 May 2017 22:51:13 GMT
+      content-length:
       - '34973'
-      X-Cache:
-      - TCP_SWAPFAIL_MISS from a23-35-149-86.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
+      x-cache:
+      - TCP_HIT from a173-222-211-190.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
         (-)
-      Connection:
-      - keep-alive
-      X-Cache-Remote:
-      - TCP_SWAPFAIL_MISS from a23-35-149-95.deploy.akamaitechnologies.com (AkamaiGHost/8.3.4.1-19946687)
-        (-)
-      X-Apple-Partner:
+      connection:
+      - close
+      x-apple-partner:
       - origin.0
     body:
       encoding: ASCII-8BIT
@@ -852,5 +845,5 @@ http_interactions:
         MTAtMDEtMDFUMDg6MDA6MDBaIiwgInByaW1hcnlHZW5yZU5hbWUiOiJSb2Nr
         In1dCn0KCgo=
     http_version: 
-  recorded_at: Fri, 19 May 2017 15:26:16 GMT
+  recorded_at: Fri, 19 May 2017 22:51:13 GMT
 recorded_with: VCR 3.0.3

@@ -1,4 +1,3 @@
-require 'addressable/uri'
 module ItunesApi
   module Requests
     # Fetch all the artist ids corresponding to a search term
@@ -25,7 +24,7 @@ module ItunesApi
         'search'
       end
 
-      def query_values
+      def query
         {
           attribute: 'artistTerm',
           entity: 'album',
