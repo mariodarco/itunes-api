@@ -28,10 +28,6 @@ module ItunesApi
           new_hash
         end
       end
-
-      # def url
-      #   "#{BASE_URL}/#{action}?#{query}"
-      # end
     end
   end
 end

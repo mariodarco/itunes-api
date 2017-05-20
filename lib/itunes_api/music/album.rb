@@ -8,6 +8,8 @@ module ItunesApi
 
       def self.build(albums_data)
         albums_data.map { |data| new(data) }
+                   .sort_by(&:released)
+                   .reverse
       end
 
       def artwork
