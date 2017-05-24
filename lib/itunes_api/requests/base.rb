@@ -18,6 +18,10 @@ module ItunesApi
         Faraday.new(url: BASE_URL)
       end
 
+      def country_code
+        Configuration.instance.country_code || 'GB'
+      end
+
       def response
         connection.get(action, query)
       end

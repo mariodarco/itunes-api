@@ -46,7 +46,7 @@ module ItunesApi
         {
           entity: 'album',
           amgArtistId: @artist_id,
-          country: COUNTRY_CODE,
+          country: country_code,
           limit: LIMIT,
           sort: 'recent'
         }

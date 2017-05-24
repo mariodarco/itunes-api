@@ -25,6 +25,16 @@ Or install it yourself as:
 $ gem install itunes_api
 ```
 
+## Configuration
+
+Add an initializer to your app to set the country for the Store:
+```ruby
+# config/initializers/itunes_api.rb
+ItunesApi.configure do |config|
+  config.country_code = ENV['COUNTRY_CODE']
+end
+```
+
 ## Usage
 
 To return all the AMG ids associated with a search term.

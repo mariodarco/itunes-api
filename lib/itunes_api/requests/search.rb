@@ -29,7 +29,7 @@ module ItunesApi
           attribute: 'artistTerm',
           entity: 'album',
           term: @artist_name,
-          country: COUNTRY_CODE,
+          country: country_code,
           limit: LIMIT,
           media: 'music',
           sort: 'recent'
