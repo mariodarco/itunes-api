@@ -7,10 +7,12 @@ describe ItunesApi::Music::Album do
     {
       collectionName: 'The Dark Side of The Moon',
       artworkUrl100: 'http://example.com/tdsotm.jpg',
-      releaseDate: first_date
+      collectionId: '999666',
+      releaseDate: first_date_string
     }
   end
-  let(:first_date) { '1973-03-01' }
+  let(:first_date_string) { '1973-03-01' }
+  let(:first_date) { Date.parse(first_date_string) }
 
   describe '.build' do
     subject { described_class.build(albums_data) }
@@ -20,10 +22,11 @@ describe ItunesApi::Music::Album do
       {
         collectionName: 'The Wall',
         artworkUrl100: 'http://example.com/tw.jpg',
-        releaseDate: second_date
+        collectionId: '999667',
+        releaseDate: second_date_string
       }
     end
-    let(:second_date) { '1979-11-30' }
+    let(:second_date_string) { '1979-11-30' }
 
     it { is_expected.to be_a Array }
     it { is_expected.to all be_a described_class }
@@ -35,6 +38,12 @@ describe ItunesApi::Music::Album do
     it { is_expected.to eql 'http://example.com/tdsotm.jpg' }
   end
 
+  describe '#collection_id' do
+    subject { instance.collection_id }
+
+    it { is_expected.to eql '999666' }
+  end
+
   describe '#name' do
     subject { instance.name }
 
@@ -44,6 +53,21 @@ describe ItunesApi::Music::Album do
   describe '#released' do
     subject { instance.released }
 
-    it { is_expected.to eql Date.parse(first_date) }
+    it { is_expected.to eql first_date }
+  end
+
+  describe '#to_hash' do
+    subject { instance.to_hash }
+
+    let(:album_data) do
+      {
+        artwork: 'http://example.com/tdsotm.jpg',
+        collection_id: '999666', 
+        name: 'The Dark Side of The Moon',
+        released: first_date
+      }
+    end
+
+    it { is_expected.to eql album_data }
   end
 end

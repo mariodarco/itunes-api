@@ -16,12 +16,25 @@ module ItunesApi
         @artwork ||= data[:artworkUrl100]
       end
 
+      def collection_id
+        @collection_id ||= data[:collectionId]
+      end
+
       def name
         @name ||= data[:collectionName]
       end
 
       def released
         @released ||= Date.parse(data[:releaseDate])
+      end
+
+      def to_hash
+        {
+          artwork: artwork,
+          collection_id: collection_id,
+          name: name,
+          released: released,
+        }
       end
 
       private
