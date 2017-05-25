@@ -13,6 +13,8 @@ module ItunesApi
       end
 
       def artist_with_albums
+        return artist unless artist
+
         artist.merge(albums: albums)
       end
 
@@ -33,11 +35,13 @@ module ItunesApi
       end
 
       def artist
+        return artist_data unless artist_data
+
         symbolize_keys(unwrapped(artist_data))
       end
 
       def artist_data
-        results.find do |wrappers|
+        @artist_data ||= results.find do |wrappers|
           wrappers['wrapperType'] == 'artist'
         end
       end
@@ -45,16 +49,15 @@ module ItunesApi
       def query
         {
           entity: 'album',
-          amgArtistId: @artist_id,
+          id: @artist_id,
           country: country_code,
           limit: LIMIT,
           sort: 'recent'
         }
       end
 
-      def unwrapped(hash)
-        hash.delete('wrapperType')
-        hash
+      def unwrapped(data_hash)
+        data_hash.tap { |hash| hash.delete('wrapperType') }
       end
     end
   end

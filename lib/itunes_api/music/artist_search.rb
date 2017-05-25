@@ -11,7 +11,7 @@ module ItunesApi
       end
 
       def artists
-        @artists ||= artist_ids.map { |id| build_artist(id) }
+        @artists ||= artist_ids.map { |id| build_artist(id) }.compact
       end
 
       private
@@ -23,9 +23,15 @@ module ItunesApi
       end
 
       def build_artist(id)
-        Artist.new(
-          Requests::Lookup.artist_with_albums(id)
-        )
+        if (lookup = lookup(id))
+          Artist.new(lookup)
+        end
+      end
+
+      def lookup(id)
+        Requests::Lookup.artist_with_albums(id)
+      rescue
+        nil
       end
     end
   end

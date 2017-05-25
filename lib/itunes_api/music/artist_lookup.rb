@@ -11,17 +11,21 @@ module ItunesApi
       end
 
       def artist
-        @artist ||= build_artist(artist_id)
+        build_artist
       end
 
       private
 
       attr_reader :artist_id
 
-      def build_artist(id)
-        Artist.new(
-          Requests::Lookup.artist_with_albums(id)
-        )
+      def build_artist
+        return lookup unless lookup
+
+        Artist.new(lookup)
+      end
+
+      def lookup
+        @lookup ||= Requests::Lookup.artist_with_albums(artist_id)
       end
     end
   end

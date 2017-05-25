@@ -14,7 +14,7 @@ module ItunesApi
 
       def artist_ids
         results.collect do |result|
-          result['amgArtistId']
+          result['artistId']
         end.compact.uniq.sort
       end
 

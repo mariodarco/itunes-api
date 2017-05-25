@@ -10,8 +10,8 @@ module ItunesApi
         @albums ||= Album.build(data[:albums])
       end
 
-      def amg_id
-        @amg_id ||= data[:amgArtistId]
+      def apple_id
+        @apple_id ||= data[:artistId]
       end
 
       def name
