@@ -56,7 +56,7 @@ ItunesApi.artist_search('Pink Floyd')
 
 Ruby version:
 ```
-2.3.3
+2.4.1
 ```
 
 Fork the project, clone the repository and bundle:
