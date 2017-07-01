@@ -2,9 +2,8 @@ module ItunesApi
   module Music
     # Artist or Band from the Apple catalog
     class Artist
-      def initialize(data)
-        @data = data
-      end
+      attr_reader_init :data
+      private :data
 
       def albums
         @albums ||= Album.build(data[:albums])
@@ -17,10 +16,6 @@ module ItunesApi
       def name
         @name ||= data[:artistName]
       end
-
-      private
-
-      attr_reader :data
     end
   end
 end

@@ -3,14 +3,8 @@ module ItunesApi
     # Allows querying the API via lookup.
     class Lookup
       include Base
-
-      def initialize(artist_id)
-        @artist_id = artist_id
-      end
-
-      def self.artist_with_albums(id)
-        new(id).artist_with_albums
-      end
+      attr_reader_init :artist_id
+      selfie :artist_with_albums
 
       def artist_with_albums
         return artist unless artist

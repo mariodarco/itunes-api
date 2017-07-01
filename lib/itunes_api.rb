@@ -1,3 +1,4 @@
+require 'selfies'
 require 'itunes_api/configuration'
 require 'itunes_api/requests/all'
 require 'itunes_api/music/all'

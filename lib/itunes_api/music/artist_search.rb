@@ -2,21 +2,14 @@ module ItunesApi
   module Music
     # Artists or Bands resulting from a search
     class ArtistSearch
-      def initialize(name)
-        @name = name
-      end
-
-      def self.artists(name)
-        new(name).artists
-      end
+      attr_reader_init :name
+      selfie :artists
 
       def artists
         @artists ||= artist_ids.map { |id| build_artist(id) }.compact
       end
 
       private
-
-      attr_reader :name
 
       def artist_ids
         @search ||= ItunesApi.artist_ids(name)

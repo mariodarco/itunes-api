@@ -3,14 +3,8 @@ module ItunesApi
     # Fetch all the artist ids corresponding to a search term
     class Search
       include Base
-
-      def initialize(artist_name)
-        @artist_name = artist_name
-      end
-
-      def self.artist_ids(artist_name)
-        new(artist_name).artist_ids
-      end
+      attr_reader_init :artist_name
+      selfie :artist_ids
 
       def artist_ids
         results.collect do |result|

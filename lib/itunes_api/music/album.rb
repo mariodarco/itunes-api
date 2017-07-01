@@ -2,9 +2,8 @@ module ItunesApi
   module Music
     # Wrapper for album results.
     class Album
-      def initialize(data)
-        @data = data
-      end
+      attr_reader_init :data
+      private :data
 
       def self.build(albums_data)
         albums_data.map { |data| new(data) }
@@ -36,10 +35,6 @@ module ItunesApi
           released: released,
         }
       end
-
-      private
-
-      attr_reader :data
     end
   end
 end
