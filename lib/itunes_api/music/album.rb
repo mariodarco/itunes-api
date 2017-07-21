@@ -16,8 +16,10 @@ module ItunesApi
         @artwork ||= data[:artworkUrl100]
       end
 
-      def apple_music?
-        tracklist.any?(&:streamable?)
+      def availability
+        return :streaming if apple_music?
+
+        :sale
       end
 
       def collection_id
@@ -38,11 +40,15 @@ module ItunesApi
           collection_id: collection_id,
           name: name,
           released: released,
-          apple_music: apple_music?
+          availability: availability
         }
       end
 
       private
+
+      def apple_music?
+        tracklist.any?(&:streamable?)
+      end
 
       def tracklist
         @tracklist ||= AlbumLookup.tracklist(collection_id, store)

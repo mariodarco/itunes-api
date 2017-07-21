@@ -68,7 +68,7 @@ describe ItunesApi::Music::Album do
         collection_id: '999666',
         name: 'The Dark Side of The Moon',
         released: first_date,
-        apple_music: false
+        availability: :sale
       }
     end
 
