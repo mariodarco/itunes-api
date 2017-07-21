@@ -12,6 +12,10 @@ module ItunesApi
     Requests::Search.artist_ids(name, store)
   end
 
+  def self.album_lookup(album_id, store = default_store)
+    Music::AlbumLookup.tracklist(album_id, store)
+  end
+
   def self.artist_lookup(artist_id, store = default_store)
     Music::ArtistLookup.artist(artist_id, store)
   end

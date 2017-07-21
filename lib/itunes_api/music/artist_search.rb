@@ -17,7 +17,7 @@ module ItunesApi
 
       def build_artist(id)
         if (lookup = lookup(id))
-          Artist.new(lookup)
+          Artist.new(lookup, store)
         end
       end
 

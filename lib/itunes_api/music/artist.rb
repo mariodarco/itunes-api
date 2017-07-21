@@ -2,11 +2,11 @@ module ItunesApi
   module Music
     # Artist or Band from the Apple catalog
     class Artist
-      attr_reader_init :data
+      attr_reader_init :data, :store
       private :data
 
       def albums
-        @albums ||= Album.build(data[:albums])
+        @albums ||= Album.build(data[:albums], store)
       end
 
       def apple_id

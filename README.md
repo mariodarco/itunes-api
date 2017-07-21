@@ -42,22 +42,28 @@ To return all the Apple ids associated with a search term.
 ItunesApi.artist_ids('Pink Floyd')
 ```
 
-To return a specific artist with albums, based on the Apple id.
-```ruby
-ItunesApi.artist_lookup(12345)
-```
-
 To get all artists returning from a search term, and their albums.
 ```ruby
-ItunesApi.artist_search('Pink Floyd')
+ItunesApi.artist_search('Led Zeppelin')
+```
+
+To return a specific artist with albums, based on the Apple id.
+```ruby
+ItunesApi.artist_lookup(265766061)
+```
+
+To return the tracklist for a specific albums, based on the Apple collection id.
+```ruby
+ItunesApi.album_lookup(286930912)
 ```
 
 An argument holding the country code can be used to look into different stores than the default one.
 
 ```ruby
 ItunesApi.artist_ids('Pink Floyd', :it)
-ItunesApi.artist_lookup(12345, :us)
-ItunesApi.artist_search('Pink Floyd', :fr)
+ItunesApi.artist_search('Led Zeppelin', :fr)
+ItunesApi.artist_lookup(265766061, :us)
+ItunesApi.album_lookup(286930912, :gb)
 ```
 
 ## Development

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ItunesApi::Music::Album do
-  let(:instance) { described_class.new(first_album_data) }
+  let(:instance) { described_class.new(first_album_data, store) }
 
   let(:first_album_data) do
     {
@@ -13,9 +13,10 @@ describe ItunesApi::Music::Album do
   end
   let(:first_date_string) { '1973-03-01' }
   let(:first_date) { Date.parse(first_date_string) }
+  let(:store) { :gb }
 
   describe '.build' do
-    subject { described_class.build(albums_data) }
+    subject { described_class.build(albums_data, store) }
 
     let(:albums_data) { [first_album_data, second_album_data] }
     let(:second_album_data) do
@@ -57,14 +58,17 @@ describe ItunesApi::Music::Album do
   end
 
   describe '#to_hash' do
-    subject { instance.to_hash }
+    subject do
+      VCR.use_cassette('album_lookup') { instance.to_hash }
+    end
 
     let(:album_data) do
       {
         artwork: 'http://example.com/tdsotm.jpg',
-        collection_id: '999666', 
+        collection_id: '999666',
         name: 'The Dark Side of The Moon',
-        released: first_date
+        released: first_date,
+        apple_music: false
       }
     end
 

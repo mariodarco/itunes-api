@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ItunesApi::Music::Artist do
-  let(:instance) { described_class.new(artist_data) }
+  let(:instance) { described_class.new(artist_data, store) }
 
   let(:album_data) do
     {
@@ -18,6 +18,8 @@ describe ItunesApi::Music::Artist do
       albums: [album_data]
     }
   end
+
+  let(:store) { :gb }
 
   describe '#albums' do
     subject { instance.albums }

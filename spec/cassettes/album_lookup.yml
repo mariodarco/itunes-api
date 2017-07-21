@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://itunes.apple.com/lookup?country=GB&entity=song&id=999666&limit=200&sort=trackNumber
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      x-apple-jingle-correlation-key:
+      - WY66PAGGJ45RRTQKCYKKSHYRYA
+      x-apple-application-site:
+      - NWK
+      access-control-allow-origin:
+      - "*"
+      apple-originating-system:
+      - MZStoreServices
+      strict-transport-security:
+      - max-age=31536000
+      x-apple-translated-wo-url:
+      - "/WebObjects/MZStoreServices.woa/ws/wsLookup?country=GB&entity=song&id=999666&limit=200&sort=trackNumber&urlDesc="
+      apple-tk:
+      - 'false'
+      x-apple-orig-url:
+      - https://itunes.apple.com/lookup?country=GB&entity=song&id=999666&limit=200&sort=trackNumber
+      apple-seq:
+      - '0'
+      content-type:
+      - text/javascript; charset=utf-8
+      apple-timing-app:
+      - 13 ms
+      content-disposition:
+      - attachment; filename=1.txt
+      x-apple-application-instance:
+      - '1000465'
+      x-webobjects-loadaverage:
+      - '0'
+      x-content-type-options:
+      - nosniff
+      x-apple-request-uuid:
+      - b63de780-c64f-3b18-ce0a-1614a91f11c0
+      vary:
+      - Accept-Encoding
+      cache-control:
+      - max-age=86400
+      date:
+      - Fri, 21 Jul 2017 22:25:10 GMT
+      content-length:
+      - '42'
+      x-cache:
+      - TCP_MISS from a23-3-15-77.deploy.akamaitechnologies.com (AkamaiGHost/9.0.2.0.1-20438731)
+        (-)
+      x-true-cache-key:
+      - "/L/itunes.apple.com/lookup ci2=country=GB&entity=song&id=999666&limit=200&sort=trackNumber__"
+      connection:
+      - close
+      x-cache-remote:
+      - TCP_MISS from a104-103-232-180.deploy.akamaitechnologies.com (AkamaiGHost/9.0.2-20263348)
+        (-)
+      x-apple-partner:
+      - origin.0
+    body:
+      encoding: UTF-8
+      string: |2+
+
+
+
+        {
+         "resultCount":0,
+         "results": []
+        }
+
+
+    http_version: 
+  recorded_at: Fri, 21 Jul 2017 22:25:10 GMT
+recorded_with: VCR 3.0.3

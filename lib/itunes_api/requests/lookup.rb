@@ -43,15 +43,11 @@ module ItunesApi
       def query
         {
           entity: 'album',
-          id: @artist_id,
+          id: artist_id,
           country: store.to_s.upcase,
           limit: LIMIT,
           sort: 'recent'
         }
-      end
-
-      def unwrapped(data_hash)
-        data_hash.tap { |hash| hash.delete('wrapperType') }
       end
     end
   end

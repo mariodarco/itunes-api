@@ -28,6 +28,10 @@ module ItunesApi
           new_hash
         end
       end
+
+      def unwrapped(data_hash)
+        data_hash.tap { |hash| hash.delete('wrapperType') }
+      end
     end
   end
 end
