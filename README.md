@@ -31,18 +31,18 @@ Add an initializer to your app to set the country for the Store:
 ```ruby
 # config/initializers/itunes_api.rb
 ItunesApi.configure do |config|
-  config.country_code = ENV['COUNTRY_CODE']
+  config.country_code = ENV['COUNTRY_CODE'] || :gb
 end
 ```
 
 ## Usage
 
-To return all the AMG ids associated with a search term.
+To return all the Apple ids associated with a search term.
 ```ruby
 ItunesApi.artist_ids('Pink Floyd')
 ```
 
-To return a specific artist with albums, based on the AMG id.
+To return a specific artist with albums, based on the Apple id.
 ```ruby
 ItunesApi.artist_lookup(12345)
 ```
@@ -50,6 +50,14 @@ ItunesApi.artist_lookup(12345)
 To get all artists returning from a search term, and their albums.
 ```ruby
 ItunesApi.artist_search('Pink Floyd')
+```
+
+An argument holding the country code can be used to look into different stores than the default one.
+
+```ruby
+ItunesApi.artist_ids('Pink Floyd', :it)
+ItunesApi.artist_lookup(12345, :us)
+ItunesApi.artist_search('Pink Floyd', :fr)
 ```
 
 ## Development
