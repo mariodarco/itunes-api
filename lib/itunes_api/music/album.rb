@@ -40,7 +40,8 @@ module ItunesApi
           collection_id: collection_id,
           name: name,
           released: released,
-          availability: availability
+          availability: availability,
+          store: store
         }
       end
 

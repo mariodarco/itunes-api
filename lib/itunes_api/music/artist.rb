@@ -16,6 +16,14 @@ module ItunesApi
       def name
         @name ||= data[:artistName]
       end
+
+      def to_hash
+        {
+          apple_id: apple_id,
+          name: name,
+          store: store
+        }
+      end
     end
   end
 end
