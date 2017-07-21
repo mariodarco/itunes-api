@@ -8,19 +8,25 @@ module ItunesApi
   BASE_URL = 'https://itunes.apple.com'.freeze
   LIMIT = 200
 
-  def self.artist_ids(name)
-    Requests::Search.artist_ids(name)
+  def self.artist_ids(name, store = default_store)
+    Requests::Search.artist_ids(name, store)
   end
 
-  def self.artist_lookup(artist_id)
-    Music::ArtistLookup.artist(artist_id)
+  def self.artist_lookup(artist_id, store = default_store)
+    Music::ArtistLookup.artist(artist_id, store)
   end
 
-  def self.artist_search(name)
-    Music::ArtistSearch.artists(name)
+  def self.artist_search(name, store = default_store)
+    Music::ArtistSearch.artists(name, store)
   end
 
   def self.configure
     yield(Configuration.instance)
+  end
+
+  private
+
+  def self.default_store
+    Configuration.instance.country_code rescue :gb
   end
 end

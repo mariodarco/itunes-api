@@ -2,8 +2,8 @@ module ItunesApi
   module Music
     # Artist or Band resulting from a specific lookup
     class ArtistLookup
-      attr_reader_init :artist_id
-      selfie :artist
+      attr_reader_init :artist_id, :store
+      selfie :artist, :store
 
       def artist
         build_artist
@@ -18,7 +18,7 @@ module ItunesApi
       end
 
       def lookup
-        @lookup ||= Requests::Lookup.artist_with_albums(artist_id)
+        @lookup ||= Requests::Lookup.artist_with_albums(artist_id, store)
       end
     end
   end

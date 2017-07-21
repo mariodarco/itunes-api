@@ -3,7 +3,7 @@ module ItunesApi
     # Allows querying the API via lookup.
     class Lookup
       include Base
-      attr_reader_init :artist_id
+      attr_reader_init :artist_id, :store
       selfie :artist_with_albums
 
       def artist_with_albums
@@ -44,7 +44,7 @@ module ItunesApi
         {
           entity: 'album',
           id: @artist_id,
-          country: country_code,
+          country: store.to_s.upcase,
           limit: LIMIT,
           sort: 'recent'
         }

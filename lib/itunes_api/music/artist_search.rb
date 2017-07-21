@@ -2,7 +2,7 @@ module ItunesApi
   module Music
     # Artists or Bands resulting from a search
     class ArtistSearch
-      attr_reader_init :name
+      attr_reader_init :name, :store
       selfie :artists
 
       def artists
@@ -12,7 +12,7 @@ module ItunesApi
       private
 
       def artist_ids
-        @search ||= ItunesApi.artist_ids(name)
+        @search ||= ItunesApi.artist_ids(name, store)
       end
 
       def build_artist(id)
@@ -22,7 +22,7 @@ module ItunesApi
       end
 
       def lookup(id)
-        Requests::Lookup.artist_with_albums(id)
+        Requests::Lookup.artist_with_albums(id, store)
       rescue
         nil
       end

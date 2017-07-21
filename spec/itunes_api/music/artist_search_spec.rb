@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 describe ItunesApi::Music::ArtistSearch do
-  let(:instance) { described_class.new(artist_name) }
+  let(:instance) { described_class.new(artist_name, store) }
 
   let(:artist_name) { 'The Jimi Hendrix Experience' }
+  let(:store) { :gb }
 
   describe '#artists' do
     subject do

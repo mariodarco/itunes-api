@@ -3,7 +3,7 @@ module ItunesApi
     # Fetch all the artist ids corresponding to a search term
     class Search
       include Base
-      attr_reader_init :artist_name
+      attr_reader_init :artist_name, :store
       selfie :artist_ids
 
       def artist_ids
@@ -23,7 +23,7 @@ module ItunesApi
           attribute: 'artistTerm',
           entity: 'album',
           term: @artist_name,
-          country: country_code,
+          country: store.to_s.upcase,
           limit: LIMIT,
           media: 'music',
           sort: 'recent'
