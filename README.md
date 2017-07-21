@@ -1,7 +1,5 @@
-[![Gem Version](https://badge.fury.io/rb/itunes_api.svg)](https://badge.fury.io/rb/itunes_api) [![Dependency Status](https://gemnasium.com/badges/github.com/mariodarco/itunes-api.svg)](https://gemnasium.com/github.com/mariodarco/itunes-api) [![CircleCI](https://circleci.com/gh/mariodarco/itunes-api/tree/master.svg?style=shield)](https://circleci.com/gh/mariodarco/itunes-api/tree/master)
-
-
 # ItunesApi
+[![Gem Version](https://badge.fury.io/rb/itunes_api.svg)](https://badge.fury.io/rb/itunes_api) [![Dependency Status](https://gemnasium.com/badges/github.com/mariodarco/itunes-api.svg)](https://gemnasium.com/github.com/mariodarco/itunes-api) [![CircleCI](https://circleci.com/gh/mariodarco/itunes-api/tree/master.svg?style=shield)](https://circleci.com/gh/mariodarco/itunes-api/tree/master) [![Coverage Status](https://coveralls.io/repos/github/mariodarco/itunes-api/badge.svg?branch=master)](https://coveralls.io/github/mariodarco/itunes-api?branch=master)
 
 A simple interface for the Itunes Api.
 
