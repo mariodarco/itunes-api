@@ -17,9 +17,13 @@ module ItunesApi
       end
 
       def availability
-        return :streaming if apple_music?
+        prefix = pre_release? ? 'pre_release_' : ''
 
-        :sale
+        if apple_music?
+          "#{prefix}streaming".to_sym
+        else
+          "#{prefix}sale".to_sym
+        end
       end
 
       def collection_id
@@ -49,6 +53,10 @@ module ItunesApi
 
       def apple_music?
         tracklist.any?(&:streamable?)
+      end
+
+      def pre_release?
+        released >= Date.today
       end
 
       def tracklist

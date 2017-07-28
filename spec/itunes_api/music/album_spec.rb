@@ -39,6 +39,42 @@ describe ItunesApi::Music::Album do
     it { is_expected.to eql 'http://example.com/tdsotm.jpg' }
   end
 
+  describe '#availability' do
+    subject { instance.availability }
+
+    let(:streaming) { true }
+
+    before do
+      allow(instance).to receive(:apple_music?).and_return(streaming)
+    end
+
+    context 'when the album has not been released yet' do
+      let(:first_date_string) { (Date.today + 1).to_s }
+
+      context 'and it is available for streaming' do
+        it { is_expected.to eql :pre_release_streaming }
+      end
+
+      context 'and it is not available for streaming' do
+        let(:streaming) { false }
+
+        it { is_expected.to eql :pre_release_sale }
+      end
+    end
+
+    context 'when the album has been released' do
+      context 'and it is available for streaming' do
+        it { is_expected.to eql :streaming }
+      end
+
+      context 'and it is not available for streaming' do
+        let(:streaming) { false }
+
+        it { is_expected.to eql :sale }
+      end
+    end
+  end
+
   describe '#collection_id' do
     subject { instance.collection_id }
 
