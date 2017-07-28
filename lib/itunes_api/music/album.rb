@@ -56,7 +56,7 @@ module ItunesApi
       end
 
       def pre_release?
-        released >= Date.today
+        released > Date.today
       end
 
       def tracklist
