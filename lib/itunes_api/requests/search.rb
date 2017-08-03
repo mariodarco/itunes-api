@@ -7,13 +7,19 @@ module ItunesApi
       selfie :artist_ids
 
       def artist_ids
-        results.collect { |result| result['artistId'] }.compact.uniq
+        results.collect do |result|
+          name_in?(result['artistName']) && result['artistId']
+        end.compact.uniq
       end
 
       private
 
       def action
         'search'
+      end
+
+      def name_in?(complete_name)
+        complete_name.downcase.include?(artist_name.downcase) ? true : nil
       end
 
       def query
