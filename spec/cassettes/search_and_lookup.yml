@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://itunes.apple.com/search?attribute=artistTerm&country=GB&entity=album&limit=200&media=music&sort=recent&term=The+Jimi+Hendrix+Experience
+    uri: https://itunes.apple.com/search?attribute=artistTerm&country=GB&entity=musicArtist&limit=200&media=music&sort=recent&term=The+Jimi+Hendrix+Experience
     body:
       encoding: US-ASCII
       string: ''

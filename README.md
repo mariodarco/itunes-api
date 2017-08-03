@@ -1,4 +1,5 @@
 # ItunesApi
+
 [![Gem Version](https://badge.fury.io/rb/itunes_api.svg)](https://badge.fury.io/rb/itunes_api) [![Dependency Status](https://gemnasium.com/badges/github.com/mariodarco/itunes-api.svg)](https://gemnasium.com/github.com/mariodarco/itunes-api) [![CircleCI](https://circleci.com/gh/mariodarco/itunes-api/tree/master.svg?style=shield)](https://circleci.com/gh/mariodarco/itunes-api/tree/master) [![Coverage Status](https://coveralls.io/repos/github/mariodarco/itunes-api/badge.svg?branch=master)](https://coveralls.io/github/mariodarco/itunes-api?branch=master)
 
 A simple interface for the Itunes Api.
@@ -14,18 +15,19 @@ gem 'itunes_api'
 And then execute:
 
 ```ruby
-$ bundle
+bundle
 ```
 
 Or install it yourself as:
 
 ```ruby
-$ gem install itunes_api
+gem install itunes_api
 ```
 
 ## Configuration
 
 Add an initializer to your app to set the country for the Store:
+
 ```ruby
 # config/initializers/itunes_api.rb
 ItunesApi.configure do |config|
@@ -35,22 +37,26 @@ end
 
 ## Usage
 
-To return all the Apple ids associated with a search term.
+To return all the Apple ids associated with the search for a Artist name.
+
 ```ruby
 ItunesApi.artist_ids('Pink Floyd')
 ```
 
 To get all artists returning from a search term, and their albums.
+
 ```ruby
 ItunesApi.artist_search('Led Zeppelin')
 ```
 
 To return a specific artist with albums, based on the Apple id.
+
 ```ruby
 ItunesApi.artist_lookup(265766061)
 ```
 
 To return the tracklist for a specific albums, based on the Apple collection id.
+
 ```ruby
 ItunesApi.album_lookup(286930912)
 ```

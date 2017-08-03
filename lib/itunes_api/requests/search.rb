@@ -7,9 +7,7 @@ module ItunesApi
       selfie :artist_ids
 
       def artist_ids
-        results.collect do |result|
-          result['artistId']
-        end.compact.uniq.sort
+        results.collect { |result| result['artistId'] }.compact.uniq
       end
 
       private
@@ -21,8 +19,8 @@ module ItunesApi
       def query
         {
           attribute: 'artistTerm',
-          entity: 'album',
-          term: @artist_name,
+          entity: 'musicArtist',
+          term: artist_name,
           country: store.to_s.upcase,
           limit: LIMIT,
           media: 'music',
