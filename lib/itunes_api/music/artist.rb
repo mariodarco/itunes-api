@@ -10,7 +10,6 @@ module ItunesApi
 
       def self.search(name, store)
         Requests::Search.artist_data(name, store).map do |artist_data|
-          apple_id, genre, name, store = artist_data.values
           new(*artist_data.values)
         end
       end
