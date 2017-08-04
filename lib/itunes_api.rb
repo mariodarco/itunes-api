@@ -28,8 +28,6 @@ module ItunesApi
     yield(Configuration.instance)
   end
 
-  private
-
   def self.default_store
     ItunesApi::Configuration.instance.country_code || :gb
   end
