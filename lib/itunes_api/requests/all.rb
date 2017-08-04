@@ -1,5 +1,0 @@
-require_relative 'base'
-require_relative 'albums'
-require_relative 'artist'
-require_relative 'search'
-require_relative 'tracklist'

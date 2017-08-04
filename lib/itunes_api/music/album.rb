@@ -5,31 +5,35 @@ module ItunesApi
     class Album
       attr_reader_init :artwork, :collection_id, :genre, :name, :release_on, :store
 
-      def self.for_artist(apple_id, store)
-        lookup(apple_id, store).map { |album_data| new(*album_data.values) }
+      class << self
+        def for_artist(apple_id, store)
+          albums(apple_id, store).map { |album| new(*album.attributes) }
+        end
+
+        private
+
+        def albums(apple_id, store)
+          Requests::Albums.find_by_apple_id(apple_id, store)
+        end
       end
 
       def availability
-        return @availability if @availability
-
-        prefix = pre_release? ? 'pre_release_' : ''
-        suffix = apple_music? ? 'streaming' : 'sale'
-        @availability = "#{prefix}#{suffix}".to_sym
+        @availability ||= build_availability
       end
 
       def to_hash
         {
           artwork: artwork,
+          availability: availability,
           collection_id: collection_id,
           name: name,
           release_on: release_on,
-          availability: availability,
           store: store
         }
       end
 
       def tracklist
-        @tracklist ||= songs_data.map { |song_data| Track.new(*song_data.values) }
+        @tracklist ||= songs.map { |song| Song.new(*song.attributes) }
       end
 
       private
@@ -38,16 +42,18 @@ module ItunesApi
         tracklist.any?(&:streamable?)
       end
 
-      def self.lookup(apple_id, store)
-        Requests::Albums.attributes(apple_id, store)
+      def build_availability
+        prefix = pre_release? ? 'pre_release_' : ''
+        suffix = apple_music? ? 'streaming' : 'sale'
+        "#{prefix}#{suffix}".to_sym
       end
 
       def pre_release?
         release_on > Date.today
       end
 
-      def songs_data
-        @songs ||= Requests::Tracklist.attributes(collection_id, store)
+      def songs
+        @songs ||= Requests::Songs.find_by_collection_id(collection_id, store)
       end
     end
   end

@@ -1,7 +1,7 @@
 module ItunesApi
   module Music
     # Wrapper for song results.
-    class Track
+    class Song
       attr_reader_init :duration, :name, :number, :streamable
       alias streamable? streamable
 

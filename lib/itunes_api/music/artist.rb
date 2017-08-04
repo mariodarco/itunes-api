@@ -4,13 +4,26 @@ module ItunesApi
     class Artist
       attr_reader_init :apple_id, :genre, :name, :store
 
-      def self.find_by_apple_id(apple_id, store)
-        new(*lookup(apple_id, store))
-      end
+      class << self
+        def all_apple_ids(name, store)
+          find_all_by_name(name, store).map(&:apple_id)
+        end
 
-      def self.search(name, store)
-        Requests::Search.artist_data(name, store).map do |artist_data|
-          new(*artist_data.values)
+        def find_all_by_name(name, store)
+          Requests::Search.artists(name, store).map do |result|
+            new(*result.attributes)
+          end
+        end
+
+        def find_by_apple_id(apple_id, store)
+          artist = artist(apple_id, store)
+          artist ? new(*artist.attributes) : nil
+        end
+
+        private
+
+        def artist(apple_id, store)
+          Requests::Artist.find_by_apple_id(apple_id, store)
         end
       end
 
@@ -24,10 +37,6 @@ module ItunesApi
           name: name,
           store: store
         }
-      end
-
-      def self.lookup(apple_id, store)
-        Requests::Artist.attributes(apple_id, store).values
       end
     end
   end
