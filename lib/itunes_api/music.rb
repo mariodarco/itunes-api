@@ -21,6 +21,10 @@ module ItunesApi
         Music::Artist.find_by_apple_id(apple_id, store)
       end
 
+      def albums_for_artist(apple_id, store = default_store)
+        Music::Album.for_artist(apple_id, store)
+      end
+
       private
 
       def default_store

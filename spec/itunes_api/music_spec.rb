@@ -49,4 +49,15 @@ describe ItunesApi::Music do
       expect(subject.apple_id).to eql apple_id
     end
   end
+
+  describe '.albums_for_artist' do
+    subject do
+      VCR.use_cassette('albums') do
+        described_class.albums_for_artist(apple_id, store)
+      end
+    end
+
+    it { is_expected.to be_a(Array) }
+    it { is_expected.to all be_a(ItunesApi::Music::Album) }
+  end
 end

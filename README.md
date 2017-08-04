@@ -37,6 +37,8 @@ end
 
 ## Usage
 
+To get all the apple ids of artists returning from a search term.
+
 ```ruby
 ItunesApi::Music.all_apple_ids('Pink Floyd')
 ```
@@ -47,10 +49,19 @@ To get all artists returning from a search term.
 ItunesApi::Music.all_artists_by_name('Led Zeppelin')
 ```
 
-To return a specific artist, based on the Apple id.
+To return a specific artist, based on the artist's Apple id.
 
 ```ruby
 ItunesApi::Music.find_by_apple_id(265766061)
+```
+
+Note that each request that returns artists does not automatically return albums.
+They are lazily fetched when calling artist.albums.
+
+To return only the albums for a specific artist, based on the artist's Apple id.
+
+```ruby
+ItunesApi::Music.albums_for_artist(265766061)
 ```
 
 An argument holding the country code can be used to look into different stores than the default one.
@@ -59,6 +70,7 @@ An argument holding the country code can be used to look into different stores t
 ItunesApi::Music.all_apple_ids('Pink Floyd', :it)
 ItunesApi::Music.all_artists_by_name('Led Zeppelin', :fr)
 ItunesApi::Music.find_by_apple_id(265766061, :us)
+ItunesApi::Music.albums_for_artist(265766061, :es)
 ```
 
 ## Development
