@@ -1,6 +1,6 @@
 # ItunesApi
 
-[![Gem Version](https://badge.fury.io/rb/itunes_api.svg)](https://badge.fury.io/rb/itunes_api) [![Dependency Status](https://gemnasium.com/badges/github.com/mariodarco/itunes-api.svg)](https://gemnasium.com/github.com/mariodarco/itunes-api) [![CircleCI](https://circleci.com/gh/mariodarco/itunes-api/tree/master.svg?style=shield)](https://circleci.com/gh/mariodarco/itunes-api/tree/master) [![Coverage Status](https://coveralls.io/repos/github/mariodarco/itunes-api/badge.svg?branch=master)](https://coveralls.io/github/mariodarco/itunes-api?branch=master)
+[![Gem Version](https://badge.fury.io/rb/itunes_api.svg)](https://badge.fury.io/rb/itunes_api) [![Dependency Status](https://gemnasium.com/badges/github.com/mariodarco/itunes-api.svg)](https://gemnasium.com/github.com/mariodarco/itunes-api) [![CircleCI](https://circleci.com/gh/mariodarco/itunes-api/tree/master.svg?style=shield)](https://circleci.com/gh/mariodarco/itunes-api/tree/master)
 
 A simple interface for the Itunes Api.
 
@@ -37,37 +37,40 @@ end
 
 ## Usage
 
-To return all the Apple ids associated with the search for a Artist name.
+To return all the Apple ids associated with the search for a Artist name
 
 ```ruby
-ItunesApi.artist_ids('Pink Floyd')
+ItunesApi::Music.all_apple_ids('Pink Floyd')
 ```
 
-To get all artists returning from a search term, and their albums.
+To get all artists returning from a search term
 
 ```ruby
-ItunesApi.artist_search('Led Zeppelin')
+ItunesApi::Music.all_artists_by_name('Led Zeppelin')
 ```
 
-To return a specific artist with albums, based on the Apple id.
+To return a specific artist, based on the artist's Apple id
 
 ```ruby
-ItunesApi.artist_lookup(265766061)
+ItunesApi::Music.find_by_apple_id(265766061)
 ```
 
-To return the tracklist for a specific albums, based on the Apple collection id.
+Note that each request that returns artists does not automatically return albums.
+They are lazily fetched when calling artist.albums.
+
+To return only the albums for a specific artist, based on the artist's Apple id
 
 ```ruby
-ItunesApi.album_lookup(286930912)
+ItunesApi::Music.albums_for_artist(265766061)
 ```
 
-An argument holding the country code can be used to look into different stores than the default one.
+An argument holding the country code can be used to look into different stores than the default one
 
 ```ruby
-ItunesApi.artist_ids('Pink Floyd', :it)
-ItunesApi.artist_search('Led Zeppelin', :fr)
-ItunesApi.artist_lookup(265766061, :us)
-ItunesApi.album_lookup(286930912, :gb)
+ItunesApi::Music.all_apple_ids('Pink Floyd', :it)
+ItunesApi::Music.all_artists_by_name('Led Zeppelin', :fr)
+ItunesApi::Music.find_by_apple_id(265766061, :us)
+ItunesApi::Music.albums_for_artist(265766061, :es)
 ```
 
 ## Development

@@ -3,50 +3,37 @@ module ItunesApi
   module Music
     # Wrapper for album results.
     class Album
-      attr_reader_init :data, :store
-      private :data
+      attr_reader_init :artwork, :collection_id, :genre, :name, :release_on, :store
 
-      def self.build(albums_data, store)
-        albums_data.map { |data| new(data, store) }
-                   .sort_by(&:released)
-                   .reverse
-      end
+      class << self
+        def for_artist(apple_id, store)
+          albums(apple_id, store).map { |album| new(*album.attributes) }
+        end
 
-      def artwork
-        @artwork ||= data[:artworkUrl100]
-      end
+        private
 
-      def availability
-        prefix = pre_release? ? 'pre_release_' : ''
-
-        if apple_music?
-          "#{prefix}streaming".to_sym
-        else
-          "#{prefix}sale".to_sym
+        def albums(apple_id, store)
+          Requests::Albums.find_by_apple_id(apple_id, store)
         end
       end
 
-      def collection_id
-        @collection_id ||= data[:collectionId]
-      end
-
-      def name
-        @name ||= data[:collectionName]
-      end
-
-      def released
-        @released ||= Date.parse(data[:releaseDate])
+      def availability
+        @availability ||= build_availability
       end
 
       def to_hash
         {
           artwork: artwork,
+          availability: availability,
           collection_id: collection_id,
           name: name,
-          released: released,
-          availability: availability,
+          release_on: release_on,
           store: store
         }
+      end
+
+      def tracklist
+        @tracklist ||= songs.map { |song| Song.new(*song.attributes) }
       end
 
       private
@@ -55,12 +42,18 @@ module ItunesApi
         tracklist.any?(&:streamable?)
       end
 
-      def pre_release?
-        released > Date.today
+      def build_availability
+        prefix = pre_release? ? 'pre_release_' : ''
+        suffix = apple_music? ? 'streaming' : 'sale'
+        "#{prefix}#{suffix}".to_sym
       end
 
-      def tracklist
-        @tracklist ||= AlbumLookup.tracklist(collection_id, store)
+      def pre_release?
+        release_on > Date.today
+      end
+
+      def songs
+        @songs ||= Requests::Songs.find_by_collection_id(collection_id, store)
       end
     end
   end
