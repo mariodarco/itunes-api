@@ -26,8 +26,6 @@ module ItunesApi
         }
       end
 
-      private_class_method
-
       def self.lookup(apple_id, store)
         Requests::Artist.attributes(apple_id, store).values
       end
