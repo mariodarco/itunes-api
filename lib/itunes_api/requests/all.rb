@@ -1,4 +1,5 @@
 require_relative 'base'
-require_relative 'album_tracklist'
-require_relative 'lookup'
+require_relative 'albums'
+require_relative 'artist'
 require_relative 'search'
+require_relative 'tracklist'

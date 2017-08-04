@@ -5,13 +5,13 @@ describe ItunesApi::Requests::Search do
   let(:artist_name) { 'Jimi Hendrix' }
   let(:store) { :gb }
 
-  describe '#artist_ids' do
-    subject do
-      VCR.use_cassette('search') { instance.artist_ids }
-    end
+  # describe '#artist_ids' do
+  #   subject do
+  #     VCR.use_cassette('search') { instance.artist_ids }
+  #   end
 
-    let(:processed_result) { [62852, 62819, 485340531] }
+  #   let(:processed_result) { [62852, 62819, 485340531] }
 
-    it { is_expected.to eql processed_result }
-  end
+  #   it { is_expected.to eql processed_result }
+  # end
 end

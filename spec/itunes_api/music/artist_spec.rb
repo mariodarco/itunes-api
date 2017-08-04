@@ -21,22 +21,22 @@ describe ItunesApi::Music::Artist do
 
   let(:store) { :gb }
 
-  describe '#albums' do
-    subject { instance.albums }
+  # describe '#albums' do
+  #   subject { instance.albums }
 
-    it { is_expected.to be_a Array }
-    it { is_expected.to all be_a ItunesApi::Music::Album }
-  end
+  #   it { is_expected.to be_a Array }
+  #   it { is_expected.to all be_a ItunesApi::Music::Album }
+  # end
 
-  describe '#apple_id' do
-    subject { instance.apple_id }
+  # describe '#apple_id' do
+  #   subject { instance.apple_id }
 
-    it { is_expected.to eql 5959 }
-  end
+  #   it { is_expected.to eql 5959 }
+  # end
 
-  describe '#name' do
-    subject { instance.name }
+  # describe '#name' do
+  #   subject { instance.name }
 
-    it { is_expected.to eql 'Pink Floyd' }
-  end
+  #   it { is_expected.to eql 'Pink Floyd' }
+  # end
 end

@@ -12,16 +12,16 @@ module ItunesApi
     Requests::Search.artist_ids(name, store)
   end
 
-  def self.album_lookup(album_id, store = default_store)
-    Music::AlbumLookup.tracklist(album_id, store)
+  def self.artist_data(name, store = default_store)
+    Requests::Search.artist_data(name, store)
   end
 
-  def self.artist_lookup(artist_id, store = default_store)
-    Music::ArtistLookup.artist(artist_id, store)
+  def self.all_artists_by_name(name, store = default_store)
+    Music::Artist.search(name, store)
   end
 
-  def self.artist_search(name, store = default_store)
-    Music::ArtistSearch.artists(name, store)
+  def self.artist_lookup(apple_id, store = default_store)
+    Music::Artist.find_by_apple_id(apple_id, store)
   end
 
   def self.configure
@@ -31,6 +31,6 @@ module ItunesApi
   private
 
   def self.default_store
-    Configuration.instance.country_code rescue :gb
+    ItunesApi::Configuration.instance.country_code || :gb
   end
 end

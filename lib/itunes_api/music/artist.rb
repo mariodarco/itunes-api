@@ -2,19 +2,21 @@ module ItunesApi
   module Music
     # Artist or Band from the Apple catalog
     class Artist
-      attr_reader_init :data, :store
-      private :data
+      attr_reader_init :apple_id, :genre, :name, :store
+
+      def self.find_by_apple_id(apple_id, store)
+        new(*lookup(apple_id, store))
+      end
+
+      def self.search(name, store)
+        Requests::Search.artist_data(name, store).map do |artist_data|
+          apple_id, genre, name, store = artist_data.values
+          new(*artist_data.values)
+        end
+      end
 
       def albums
-        @albums ||= Album.build(data[:albums], store)
-      end
-
-      def apple_id
-        @apple_id ||= data[:artistId]
-      end
-
-      def name
-        @name ||= data[:artistName]
+        @albums ||= Album.for_artist(apple_id, store)
       end
 
       def to_hash
@@ -23,6 +25,12 @@ module ItunesApi
           name: name,
           store: store
         }
+      end
+
+      private_class_method
+
+      def self.lookup(apple_id, store)
+        Requests::Artist.attributes(apple_id, store).values
       end
     end
   end

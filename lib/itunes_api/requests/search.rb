@@ -1,14 +1,25 @@
 module ItunesApi
   module Requests
-    # Fetch all the artist ids corresponding to a search term
+    # Allows querying the API via search for artists.
     class Search
       include Base
       attr_reader_init :artist_name, :store
-      selfie :artist_ids
+      selfie :artist_ids, :artist_data
 
       def artist_ids
+        artist_data.collect { |artist| artist[:apple_id] }
+      end
+
+      def artist_data
         results.collect do |result|
-          name_in?(result['artistName']) && result['artistId']
+          if name_in?(result['artistName'])
+            {
+              apple_id: result['artistId'],
+              genre: result['primaryGenreName'],
+              name: result['artistName'],
+              store: store
+            }
+          end
         end.compact.uniq
       end
 
@@ -30,7 +41,6 @@ module ItunesApi
           country: store.to_s.upcase,
           limit: LIMIT,
           media: 'music',
-          sort: 'recent'
         }
       end
     end
