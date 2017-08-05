@@ -6,16 +6,24 @@ module ItunesApi
         attr_reader_init :data, :store, search_term: nil
         private :data, :search_term
 
+        def amg_id
+          @amg_id ||= data['amgArtistId']
+        end
+
         def apple_id
           @apple_id ||= data['artistId']
         end
 
         def attributes
-          [apple_id, genre, name, store]
+          [amg_id, apple_id, genre, link, name, store]
         end
 
         def genre
           @genre ||= data['primaryGenreName']
+        end
+
+        def link
+          @link ||= data['artistLinkUrl']
         end
 
         def name

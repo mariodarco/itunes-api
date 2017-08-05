@@ -2,7 +2,7 @@ module ItunesApi
   module Music
     # Artist or Band from the Apple catalog
     class Artist
-      attr_reader_init :apple_id, :genre, :name, :store
+      attr_reader_init :amg_id, :apple_id, :genre, :link, :name, :store
 
       class << self
         def all_apple_ids(name, store)
@@ -33,7 +33,10 @@ module ItunesApi
 
       def to_hash
         {
+          amg_id: amg_id,
           apple_id: apple_id,
+          genre: genre,
+          link: link,
           name: name,
           store: store
         }

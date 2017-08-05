@@ -10,7 +10,7 @@ module ItunesApi
           duration: duration,
           name: name,
           number: number,
-          stremable: streamable?,
+          stremable: streamable?
         }
       end
     end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ItunesApi do
+RSpec.describe ItunesApi do
   it 'has a base url' do
     expect(ItunesApi::BASE_URL).to eql 'https://itunes.apple.com'
   end

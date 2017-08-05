@@ -3,7 +3,12 @@ module ItunesApi
   module Music
     # Wrapper for album results.
     class Album
-      attr_reader_init :artwork, :collection_id, :genre, :name, :release_on, :store
+      attr_reader_init :artwork,
+                       :collection_id,
+                       :genre,
+                       :name,
+                       :release_on,
+                       :store
 
       class << self
         def for_artist(apple_id, store)

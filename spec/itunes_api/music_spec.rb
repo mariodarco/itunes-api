@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ItunesApi::Music do
+RSpec.describe ItunesApi::Music do
   let(:name) { 'Metallica' }
   let(:store) { :it }
 
@@ -10,11 +10,19 @@ describe ItunesApi::Music do
     end
 
     let(:apple_ids) do
-      [3996865, 84240723, 295913859, 346711868, 876367086, 407152456, 293610693]
+      [
+        3_996_865, 84_240_723, 295_913_859, 346_711_868,
+        876_367_086, 407_152_456, 293_610_693
+      ]
     end
 
     it { is_expected.to eql apple_ids }
   end
+end
+
+RSpec.describe ItunesApi::Music do
+  let(:name) { 'Metallica' }
+  let(:store) { :it }
 
   describe '.all_artists_by_name' do
     subject do
@@ -32,8 +40,8 @@ describe ItunesApi::Music do
   end
 end
 
-describe ItunesApi::Music do
-  let(:apple_id) { 3996865 }
+RSpec.describe ItunesApi::Music do
+  let(:apple_id) { 3_996_865 }
   let(:store) { :gb }
 
   describe '.find_by_apple_id' do
