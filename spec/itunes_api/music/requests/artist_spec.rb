@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe ItunesApi::Music::Requests::Artist, type: :model do
   let(:instance) { described_class.new(apple_id, store) }
 
-  let(:apple_id) { 3_996_865 }
+  let(:apple_id) { 414_425 }
   let(:store) { 'gb' }
 
   describe '#find_by_apple_id' do
@@ -13,11 +13,11 @@ RSpec.describe ItunesApi::Music::Requests::Artist, type: :model do
 
     it 'returns the expected result' do
       expect(subject.attributes).to eql [
-        4_906,
-        3_996_865,
-        'Rock',
-        'https://itunes.apple.com/gb/artist/metallica/id3996865?uo=4',
-        'Metallica',
+        5_453,
+        414_425,
+        'Metal',
+        'https://itunes.apple.com/gb/artist/slayer/id414425?uo=4',
+        'Slayer',
         'gb'
       ]
     end

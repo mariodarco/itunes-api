@@ -8,7 +8,7 @@ RSpec.describe ItunesApi::Music::Requests::Albums, type: :model do
   describe '#find_by_apple_id' do
     subject { VCR.use_cassette('albums') { instance.find_by_apple_id } }
 
-    let(:search_id) { 3_996_865 }
+    let(:search_id) { 414_425 }
 
     it { is_expected.to be_a Array }
     it { is_expected.to all be_a ItunesApi::Music::Results::Album }
@@ -17,7 +17,7 @@ RSpec.describe ItunesApi::Music::Requests::Albums, type: :model do
   describe '#find_by_collection_id' do
     subject { VCR.use_cassette('album') { instance.find_by_collection_id } }
 
-    let(:search_id) { 696_312_806 }
+    let(:search_id) { 1_038_991_417 }
 
     it { is_expected.to be_a ItunesApi::Music::Results::Album }
 

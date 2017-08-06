@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://itunes.apple.com/lookup?country=GB&entity=album&id=696312806&limit=200
+    uri: https://itunes.apple.com/lookup?country=GB&entity=album&id=1038991417&limit=200
     body:
       encoding: US-ASCII
       string: ''
@@ -15,9 +15,9 @@ http_interactions:
       message: 
     headers:
       x-apple-jingle-correlation-key:
-      - GTHIFO4LYCUD2XV3HX3TMPSCWU
+      - RQV6B5T77EEYY4VK2J6QNBV3EU
       x-apple-application-site:
-      - MR22
+      - NWK
       access-control-allow-origin:
       - "*"
       apple-originating-system:
@@ -25,40 +25,40 @@ http_interactions:
       strict-transport-security:
       - max-age=31536000
       x-apple-translated-wo-url:
-      - "/WebObjects/MZStoreServices.woa/ws/wsLookup?country=GB&entity=album&id=696312806&limit=200&urlDesc="
+      - "/WebObjects/MZStoreServices.woa/ws/wsLookup?country=GB&entity=album&id=1038991417&limit=200&urlDesc="
       apple-tk:
       - 'false'
       x-apple-orig-url:
-      - https://itunes.apple.com/lookup?country=GB&entity=album&id=696312806&limit=200
+      - https://itunes.apple.com/lookup?country=GB&entity=album&id=1038991417&limit=200
       apple-seq:
       - '0'
       content-type:
       - text/javascript; charset=utf-8
       apple-timing-app:
-      - 17 ms
+      - 7 ms
       content-disposition:
       - attachment; filename=1.txt
       x-apple-application-instance:
-      - '4024013'
+      - '1000945'
       x-webobjects-loadaverage:
       - '0'
       x-content-type-options:
       - nosniff
       x-apple-request-uuid:
-      - 34ce82bb-8bc0-a83d-5ebb-3df7363e42b5
+      - 8c2be0f6-7ff9-098c-72aa-d27d0686bb25
       vary:
       - Accept-Encoding
       cache-control:
-      - max-age=82690
+      - max-age=86400
       date:
-      - Sat, 05 Aug 2017 23:24:45 GMT
+      - Sun, 06 Aug 2017 00:28:48 GMT
       content-length:
-      - '1046'
+      - '954'
       x-cache:
-      - TCP_MISS from a23-3-15-60.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
+      - TCP_MISS from a173-222-211-176.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
         (-)
       x-true-cache-key:
-      - "/L/itunes.apple.com/lookup ci2=country=GB&entity=album&id=696312806&limit=200__"
+      - "/L/itunes.apple.com/lookup ci2=country=GB&entity=album&id=1038991417&limit=200__"
       connection:
       - close
       x-cache-remote:
@@ -69,7 +69,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        CgoKewogInJlc3VsdENvdW50IjoxLAogInJlc3VsdHMiOiBbCnsid3JhcHBlclR5cGUiOiJjb2xsZWN0aW9uIiwgImNvbGxlY3Rpb25UeXBlIjoiQWxidW0iLCAiYXJ0aXN0SWQiOjU0NjM4MSwgImNvbGxlY3Rpb25JZCI6Njk2MzEyODA2LCAiYW1nQXJ0aXN0SWQiOjQ1NjAsICJhcnRpc3ROYW1lIjoiSXJvbiBNYWlkZW4iLCAiY29sbGVjdGlvbk5hbWUiOiJFZCBIdW50ZXIiLCAiY29sbGVjdGlvbkNlbnNvcmVkTmFtZSI6IkVkIEh1bnRlciIsICJhcnRpc3RWaWV3VXJsIjoiaHR0cHM6Ly9pdHVuZXMuYXBwbGUuY29tL2diL2FydGlzdC9pcm9uLW1haWRlbi9pZDU0NjM4MT91bz00IiwgImNvbGxlY3Rpb25WaWV3VXJsIjoiaHR0cHM6Ly9pdHVuZXMuYXBwbGUuY29tL2diL2FsYnVtL2VkLWh1bnRlci9pZDY5NjMxMjgwNj91bz00IiwgImFydHdvcmtVcmw2MCI6Imh0dHA6Ly9pczEubXpzdGF0aWMuY29tL2ltYWdlL3RodW1iL011c2ljNjAvdjQvYjUvZWMvMTgvYjVlYzE4YTctNWM2YS1kZDA0LTQ0ZDctY2NiNjE5ZDE5M2IxL3NvdXJjZS82MHg2MGJiLmpwZyIsICJhcnR3b3JrVXJsMTAwIjoiaHR0cDovL2lzMS5tenN0YXRpYy5jb20vaW1hZ2UvdGh1bWIvTXVzaWM2MC92NC9iNS9lYy8xOC9iNWVjMThhNy01YzZhLWRkMDQtNDRkNy1jY2I2MTlkMTkzYjEvc291cmNlLzEwMHgxMDBiYi5qcGciLCAiY29sbGVjdGlvblByaWNlIjoxMS45OSwgImNvbGxlY3Rpb25FeHBsaWNpdG5lc3MiOiJleHBsaWNpdCIsICJjb250ZW50QWR2aXNvcnlSYXRpbmciOiJFeHBsaWNpdCIsICJ0cmFja0NvdW50IjoyMCwgImNvcHlyaWdodCI6IuKElyAxOTk5IFRoZSBjb3B5cmlnaHQgaW4gdGhpcyBjb21waWxhdGlvbiBpcyBvd25lZCBieSBJcm9uIE1haWRlbiBIb2xkaW5ncyBMdGQgdW5kZXIgZXhjbHVzaXZlIGxpY2VuY2UgdG8gUGFybG9waG9uZSBSZWNvcmRzIEx0ZCIsICJjb3VudHJ5IjoiR0JSIiwgImN1cnJlbmN5IjoiR0JQIiwgInJlbGVhc2VEYXRlIjoiMTk5OS0wNS0xN1QwNzowMDowMFoiLCAicHJpbWFyeUdlbnJlTmFtZSI6Ik1ldGFsIn1dCn0KCgo=
+        CgoKewogInJlc3VsdENvdW50IjoxLAogInJlc3VsdHMiOiBbCnsid3JhcHBlclR5cGUiOiJjb2xsZWN0aW9uIiwgImNvbGxlY3Rpb25UeXBlIjoiQWxidW0iLCAiYXJ0aXN0SWQiOjQxNDQyNSwgImNvbGxlY3Rpb25JZCI6MTAzODk5MTQxNywgImFtZ0FydGlzdElkIjo1NDUzLCAiYXJ0aXN0TmFtZSI6IlNsYXllciIsICJjb2xsZWN0aW9uTmFtZSI6IlJlaWduIEluIEJsb29kIiwgImNvbGxlY3Rpb25DZW5zb3JlZE5hbWUiOiJSZWlnbiBJbiBCbG9vZCIsICJhcnRpc3RWaWV3VXJsIjoiaHR0cHM6Ly9pdHVuZXMuYXBwbGUuY29tL2diL2FydGlzdC9zbGF5ZXIvaWQ0MTQ0MjU/dW89NCIsICJjb2xsZWN0aW9uVmlld1VybCI6Imh0dHBzOi8vaXR1bmVzLmFwcGxlLmNvbS9nYi9hbGJ1bS9yZWlnbi1pbi1ibG9vZC9pZDEwMzg5OTE0MTc/dW89NCIsICJhcnR3b3JrVXJsNjAiOiJodHRwOi8vaXM0Lm16c3RhdGljLmNvbS9pbWFnZS90aHVtYi9NdXNpYzMvdjQvZWUvZjkvZWQvZWVmOWVkOWYtNTUzOS02MzU2LTMxOWMtZDkxNjc2ODExZWFiL3NvdXJjZS82MHg2MGJiLmpwZyIsICJhcnR3b3JrVXJsMTAwIjoiaHR0cDovL2lzNC5tenN0YXRpYy5jb20vaW1hZ2UvdGh1bWIvTXVzaWMzL3Y0L2VlL2Y5L2VkL2VlZjllZDlmLTU1MzktNjM1Ni0zMTljLWQ5MTY3NjgxMWVhYi9zb3VyY2UvMTAweDEwMGJiLmpwZyIsICJjb2xsZWN0aW9uUHJpY2UiOjguOTksICJjb2xsZWN0aW9uRXhwbGljaXRuZXNzIjoiZXhwbGljaXQiLCAiY29udGVudEFkdmlzb3J5UmF0aW5nIjoiRXhwbGljaXQiLCAidHJhY2tDb3VudCI6MTAsICJjb3B5cmlnaHQiOiLihJcgMjAxNSBBbWVyaWNhbiBSZWNvcmRpbmdzLCBMTEMiLCAiY291bnRyeSI6IkdCUiIsICJjdXJyZW5jeSI6IkdCUCIsICJyZWxlYXNlRGF0ZSI6IjE5ODYtMTAtMDdUMDc6MDA6MDBaIiwgInByaW1hcnlHZW5yZU5hbWUiOiJNZXRhbCJ9XQp9CgoK
     http_version: 
-  recorded_at: Sat, 05 Aug 2017 23:24:44 GMT
+  recorded_at: Sun, 06 Aug 2017 00:28:48 GMT
 recorded_with: VCR 3.0.3

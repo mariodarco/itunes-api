@@ -1,28 +1,23 @@
 require 'spec_helper'
 
 RSpec.describe ItunesApi::Music do
-  let(:name) { 'Metallica' }
-  let(:store) { :it }
+  let(:name) { 'Slayer' }
+  let(:store) { :gb }
 
   describe '.all_apple_ids' do
     subject do
       VCR.use_cassette('search') { described_class.all_apple_ids(name, store) }
     end
 
-    let(:apple_ids) do
-      [
-        3_996_865, 84_240_723, 295_913_859, 346_711_868,
-        876_367_086, 407_152_456, 293_610_693
-      ]
-    end
-
-    it { is_expected.to eql apple_ids }
+    it { is_expected.to be_a Array }
+    it { is_expected.to all be_a Integer }
+    it { is_expected.to be_include 414_425 }
   end
 end
 
 RSpec.describe ItunesApi::Music do
-  let(:name) { 'Metallica' }
-  let(:store) { :it }
+  let(:name) { 'Slayer' }
+  let(:store) { :gb }
 
   describe '.all_artists_by_name' do
     subject do
@@ -41,7 +36,7 @@ RSpec.describe ItunesApi::Music do
 end
 
 RSpec.describe ItunesApi::Music do
-  let(:apple_id) { 3_996_865 }
+  let(:apple_id) { 414_425 }
   let(:store) { :gb }
 
   describe '.find_by_apple_id' do
@@ -71,7 +66,7 @@ RSpec.describe ItunesApi::Music do
 end
 
 RSpec.describe ItunesApi::Music do
-  let(:collection_id) { 696_312_806 }
+  let(:collection_id) { 1_038_991_417 }
   let(:store) { :gb }
 
   describe '.find_by_collection_id' do

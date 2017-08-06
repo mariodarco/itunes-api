@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://itunes.apple.com/lookup?country=GB&id=3996865&limit=200
+    uri: https://itunes.apple.com/lookup?country=GB&id=414425&limit=200
     body:
       encoding: US-ASCII
       string: ''
@@ -15,9 +15,9 @@ http_interactions:
       message: 
     headers:
       x-apple-jingle-correlation-key:
-      - RULAWWKTS7JK2H5ELVBJ2K4D6A
+      - A5JLOKZYMFXPZPX4D22ZLNRPV4
       x-apple-application-site:
-      - ST11
+      - MR22
       access-control-allow-origin:
       - "*"
       apple-originating-system:
@@ -25,44 +25,44 @@ http_interactions:
       strict-transport-security:
       - max-age=31536000
       x-apple-translated-wo-url:
-      - "/WebObjects/MZStoreServices.woa/ws/wsLookup?country=GB&id=3996865&limit=200&urlDesc="
+      - "/WebObjects/MZStoreServices.woa/ws/wsLookup?country=GB&id=414425&limit=200&urlDesc="
       apple-tk:
       - 'false'
       x-apple-orig-url:
-      - https://itunes.apple.com/lookup?country=GB&id=3996865&limit=200
+      - https://itunes.apple.com/lookup?country=GB&id=414425&limit=200
       apple-seq:
       - '0'
       content-type:
       - text/javascript; charset=utf-8
       apple-timing-app:
-      - 11 ms
+      - 8 ms
       content-disposition:
       - attachment; filename=1.txt
       x-apple-application-instance:
-      - '2000626'
+      - '4068014'
       x-webobjects-loadaverage:
       - '0'
       x-content-type-options:
       - nosniff
       x-apple-request-uuid:
-      - 8d160b59-5397-d2ad-1fa4-5d429d2b83f0
+      - 0752b72b-3861-6efc-befc-1eb595b62faf
       vary:
       - Accept-Encoding
       cache-control:
-      - max-age=86387
+      - max-age=86400
       date:
-      - Fri, 04 Aug 2017 22:14:37 GMT
+      - Sun, 06 Aug 2017 00:24:22 GMT
       content-length:
-      - '283'
+      - '278'
       x-cache:
-      - TCP_MISS from a23-3-15-20.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
+      - TCP_MISS from a173-222-211-174.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
         (-)
       x-true-cache-key:
-      - "/L/itunes.apple.com/lookup ci2=country=GB&id=3996865&limit=200__"
+      - "/L/itunes.apple.com/lookup ci2=country=GB&id=414425&limit=200__"
       connection:
       - close
       x-cache-remote:
-      - TCP_MISS from a104-103-232-180.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
+      - TCP_MISS from a104-103-232-82.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
         (-)
       x-apple-partner:
       - origin.0
@@ -75,10 +75,10 @@ http_interactions:
         {
          "resultCount":1,
          "results": [
-        {"wrapperType":"artist", "artistType":"Artist", "artistName":"Metallica", "artistLinkUrl":"https://itunes.apple.com/gb/artist/metallica/id3996865?uo=4", "artistId":3996865, "amgArtistId":4906, "primaryGenreName":"Rock", "primaryGenreId":21}]
+        {"wrapperType":"artist", "artistType":"Artist", "artistName":"Slayer", "artistLinkUrl":"https://itunes.apple.com/gb/artist/slayer/id414425?uo=4", "artistId":414425, "amgArtistId":5453, "primaryGenreName":"Metal", "primaryGenreId":1153}]
         }
 
 
     http_version: 
-  recorded_at: Fri, 04 Aug 2017 22:14:37 GMT
+  recorded_at: Sun, 06 Aug 2017 00:24:22 GMT
 recorded_with: VCR 3.0.3

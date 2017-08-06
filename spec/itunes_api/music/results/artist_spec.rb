@@ -5,28 +5,28 @@ RSpec.describe ItunesApi::Music::Results::Artist, type: :model do
 
   let(:data) do
     {
-      'amgArtistId' => 4560,
-      'artistId' => 546_381,
+      'amgArtistId' => 5_453,
+      'artistId' => 414_425,
       'artistLinkUrl' => link,
-      'artistName' => 'Iron Maiden',
+      'artistName' => 'Slayer',
       'primaryGenreName' => 'Metal'
     }
   end
 
   let(:expected_attributes) do
-    [4560, 546_381, 'Metal', link, 'Iron Maiden', 'gb']
+    [5_453, 414_425, 'Metal', link, 'Slayer', 'gb']
   end
 
-  let(:link) { 'https://itunes.apple.com/gb/artist/imaiden/id999666999?uo=4' }
+  let(:link) { 'https://itunes.apple.com/gb/artist/slayer/id414425?uo=4' }
   let(:search_term) { 'Iron Maiden' }
   let(:store) { 'gb' }
 
-  it { expect(instance.amg_id).to eql 4560 }
-  it { expect(instance.apple_id).to eql 546_381 }
+  it { expect(instance.amg_id).to eql 5_453 }
+  it { expect(instance.apple_id).to eql 414_425 }
   it { expect(instance.attributes).to eql expected_attributes }
   it { expect(instance.genre).to eql 'Metal' }
   it { expect(instance.link).to eql link }
-  it { expect(instance.name).to eql 'Iron Maiden' }
+  it { expect(instance.name).to eql 'Slayer' }
   it { expect(instance.store).to eql 'gb' }
 end
 

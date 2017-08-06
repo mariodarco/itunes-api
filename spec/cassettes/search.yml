@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://itunes.apple.com/search?attribute=artistTerm&country=IT&entity=musicArtist&limit=200&media=music&term=Metallica
+    uri: https://itunes.apple.com/search?attribute=artistTerm&country=GB&entity=musicArtist&limit=200&media=music&term=Slayer
     body:
       encoding: US-ASCII
       string: ''
@@ -15,9 +15,9 @@ http_interactions:
       message: 
     headers:
       x-apple-jingle-correlation-key:
-      - TKYXSBV5KUBXOJGTITMV4S67II
+      - EH2MZ4LKZF3XDV72MKG5VX5WQA
       x-apple-application-site:
-      - ST11
+      - MR22
       access-control-allow-origin:
       - "*"
       apple-originating-system:
@@ -25,75 +25,216 @@ http_interactions:
       strict-transport-security:
       - max-age=31536000
       x-apple-translated-wo-url:
-      - "/WebObjects/MZStoreServices.woa/ws/wsSearch?attribute=artistTerm&country=IT&entity=musicArtist&limit=200&media=music&term=Metallica&urlDesc="
+      - "/WebObjects/MZStoreServices.woa/ws/wsSearch?attribute=artistTerm&country=GB&entity=musicArtist&limit=200&media=music&term=Slayer&urlDesc="
       apple-tk:
       - 'false'
       x-apple-orig-url:
-      - https://itunes.apple.com/search?attribute=artistTerm&country=IT&entity=musicArtist&limit=200&media=music&term=Metallica
+      - https://itunes.apple.com/search?attribute=artistTerm&country=GB&entity=musicArtist&limit=200&media=music&term=Slayer
       apple-seq:
       - '0'
       content-type:
       - text/javascript; charset=utf-8
       apple-timing-app:
-      - 137 ms
+      - 246 ms
       content-disposition:
       - attachment; filename=1.txt
       x-apple-application-instance:
-      - '2001010'
+      - '4017007'
       x-webobjects-loadaverage:
       - '0'
       x-content-type-options:
       - nosniff
       x-apple-request-uuid:
-      - 9ab17906-bd55-0377-24d3-44d95e4bdf42
+      - 21f4ccf1-6ac9-7771-d7fa-628ddadfb680
       vary:
       - Accept-Encoding
       cache-control:
-      - max-age=86346
+      - max-age=86400
       date:
-      - Fri, 04 Aug 2017 22:02:51 GMT
+      - Sun, 06 Aug 2017 00:17:24 GMT
       content-length:
-      - '2237'
+      - '13777'
       x-cache:
-      - TCP_MISS from a173-222-211-175.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
+      - TCP_MISS from a173-222-211-203.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
         (-)
       x-true-cache-key:
-      - "/L/itunes.apple.com/search ci2=attribute=artistTerm&country=IT&entity=musicArtist&limit=200&media=music&term=Metallica__"
+      - "/L/itunes.apple.com/search ci2=attribute=artistTerm&country=GB&entity=musicArtist&limit=200&media=music&term=Slayer__"
       connection:
       - close
       x-cache-remote:
-      - TCP_MISS from a104-103-232-91.deploy.akamaitechnologies.com (AkamaiGHost/9.0.2.0.1-20438731)
+      - TCP_MISS from a104-103-232-82.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
         (-)
       x-apple-partner:
       - origin.0
     body:
       encoding: UTF-8
-      string: "\n\n\n{\n \"resultCount\":9,\n \"results\": [\n{\"wrapperType\":\"artist\",
-        \"artistType\":\"Artist\", \"artistName\":\"Metallica\", \"artistLinkUrl\":\"https://itunes.apple.com/it/artist/metallica/id3996865?uo=4\",
-        \"artistId\":3996865, \"amgArtistId\":4906, \"primaryGenreName\":\"Rock\",
-        \"primaryGenreId\":21}, \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\",
-        \"artistName\":\"Metallica Tribute\", \"artistLinkUrl\":\"https://itunes.apple.com/it/artist/metallica-tribute/id84240723?uo=4\",
-        \"artistId\":84240723, \"primaryGenreName\":\"Tributo\", \"primaryGenreId\":100022},
-        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Lou
-        Reed\", \"artistLinkUrl\":\"https://itunes.apple.com/it/artist/lou-reed/id167203?uo=4\",
-        \"artistId\":167203, \"amgArtistId\":5247, \"primaryGenreName\":\"Rock\",
-        \"primaryGenreId\":21}, \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\",
-        \"artistName\":\"Perris Records Metallica Tribute Band\", \"artistLinkUrl\":\"https://itunes.apple.com/it/artist/perris-records-metallica-tribute-band/id295913859?uo=4\",
-        \"artistId\":295913859, \"primaryGenreName\":\"Tributo\", \"primaryGenreId\":100022},
-        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Metallica
-        Tribute Band\", \"artistLinkUrl\":\"https://itunes.apple.com/it/artist/metallica-tribute-band/id346711868?uo=4\",
-        \"artistId\":346711868}, \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\",
-        \"artistName\":\"Metallica Rocks!\", \"artistLinkUrl\":\"https://itunes.apple.com/it/artist/metallica-rocks/id876367086?uo=4\",
-        \"artistId\":876367086, \"primaryGenreName\":\"Rock\", \"primaryGenreId\":8025},
-        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Made
-        famous by Metallica\", \"artistLinkUrl\":\"https://itunes.apple.com/it/artist/made-famous-by-metallica/id407152456?uo=4\",
-        \"artistId\":407152456}, \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\",
-        \"artistName\":\"Lang Lang\", \"artistLinkUrl\":\"https://itunes.apple.com/it/artist/lang-lang/id5519614?uo=4\",
-        \"artistId\":5519614, \"amgArtistId\":533275, \"primaryGenreName\":\"Classica\",
-        \"primaryGenreId\":5}, \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\",
-        \"artistName\":\"Fear Factory's Burton C. Bell, Metallica's Robert Trujillo\",
-        \"artistLinkUrl\":\"https://itunes.apple.com/it/artist/fear-factorys-burton-c-bell-metallicas-robert-trujillo/id293610693?uo=4\",
-        \"artistId\":293610693}]\n}\n\n\n"
+      string: "\n\n\n{\n \"resultCount\":56,\n \"results\": [\n{\"wrapperType\":\"artist\",
+        \"artistType\":\"Artist\", \"artistName\":\"Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/slayer/id414425?uo=4\",
+        \"artistId\":414425, \"amgArtistId\":5453, \"primaryGenreName\":\"Metal\",
+        \"primaryGenreId\":1153}, \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\",
+        \"artistName\":\"Buffy the Vampire Slayer Cast\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/buffy-the-vampire-slayer-cast/id858203594?uo=4\",
+        \"artistId\":858203594, \"primaryGenreName\":\"Soundtrack\", \"primaryGenreId\":16},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Princess
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/princess-slayer/id733483578?uo=4\",
+        \"artistId\":733483578, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Anxiety
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/anxiety-slayer/id688821884?uo=4\",
+        \"artistId\":688821884, \"primaryGenreName\":\"New Age\", \"primaryGenreId\":13},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Buffering
+        the Vampire Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/buffering-the-vampire-slayer/id1206361206?uo=4\",
+        \"artistId\":1206361206, \"primaryGenreName\":\"Singer/Songwriter\", \"primaryGenreId\":10},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Titan
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/titan-slayer/id921010908?uo=4\",
+        \"artistId\":921010908, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Ananga
+        Sivyer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/ananga-sivyer/id528870755?uo=4\",
+        \"artistId\":528870755, \"primaryGenreName\":\"New Age\", \"primaryGenreId\":13},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Shann
+        Vander Leek\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/shann-vander-leek/id528870752?uo=4\",
+        \"artistId\":528870752, \"primaryGenreName\":\"New Age\", \"primaryGenreId\":13},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Buffy
+        the Vampire Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/buffy-the-vampire-slayer/id1010124?uo=4\",
+        \"artistId\":1010124, \"amgArtistId\":2401025, \"primaryGenreName\":\"Soundtrack\",
+        \"primaryGenreId\":16}, \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\",
+        \"artistName\":\"Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/slayer/id907800827?uo=4\",
+        \"artistId\":907800827, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Patrick
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/patrick-slayer/id632334606?uo=4\",
+        \"artistId\":632334606, \"primaryGenreName\":\"Techno\", \"primaryGenreId\":1050},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Dragon
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/dragon-slayer/id295794423?uo=4\",
+        \"artistId\":295794423, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Big
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/big-slayer/id307914504?uo=4\",
+        \"artistId\":307914504, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Rob-K
+        the Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/rob-k-the-slayer/id1132412628?uo=4\",
+        \"artistId\":1132412628, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"The
+        Dragon Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/the-dragon-slayer/id468536454?uo=4\",
+        \"artistId\":468536454, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Hipster
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/hipster-slayer/id637876944?uo=4\",
+        \"artistId\":637876944, \"primaryGenreName\":\"Pop\", \"primaryGenreId\":14},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Axe
+        the Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/axe-the-slayer/id913375963?uo=4\",
+        \"artistId\":913375963, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Jah-P
+        the Vampire Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/jah-p-the-vampire-slayer/id559632882?uo=4\",
+        \"artistId\":559632882, \"amgArtistId\":3002533, \"primaryGenreName\":\"Reggae\",
+        \"primaryGenreId\":24}, \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\",
+        \"artistName\":\"Rocky da Rhyme Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/rocky-da-rhyme-slayer/id1208288552?uo=4\",
+        \"artistId\":1208288552, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"99
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/99-slayer/id1247038616?uo=4\",
+        \"artistId\":1247038616, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Verbal
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/verbal-slayer/id1148913726?uo=4\",
+        \"artistId\":1148913726, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"G-Wizz,
+        The Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/g-wizz-the-slayer/id973272178?uo=4\",
+        \"artistId\":973272178, \"primaryGenreName\":\"Rap\", \"primaryGenreId\":1076},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Slayer
+        Brand\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/slayer-brand/id1121301258?uo=4\",
+        \"artistId\":1121301258, \"primaryGenreName\":\"House\", \"primaryGenreId\":1048},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Cookies
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/cookies-slayer/id1263155742?uo=4\",
+        \"artistId\":1263155742, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Rocky
+        the Rhyme Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/rocky-the-rhyme-slayer/id1124615730?uo=4\",
+        \"artistId\":1124615730, \"primaryGenreName\":\"East Coast Rap\", \"primaryGenreId\":1070},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Big
+        Slayer feat. M to C\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/big-slayer-feat-m-to-c/id1037617042?uo=4\",
+        \"artistId\":1037617042, \"primaryGenreName\":\"Hip-Hop\", \"primaryGenreId\":1073},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"JLM3
+        Intelligence aka The WNBA Player Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/jlm3-intelligence-aka-the-wnba-player-slayer/id967852225?uo=4\",
+        \"artistId\":967852225, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Bass
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/bass-slayer/id687517211?uo=4\",
+        \"artistId\":687517211, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Sound
+        Slayer Presents Sonny Base\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/sound-slayer-presents-sonny-base/id378399771?uo=4\",
+        \"artistId\":378399771, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Vampire
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/vampire-slayer/id642022743?uo=4\",
+        \"artistId\":642022743, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Slayer
+        the Player\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/slayer-the-player/id1064704489?uo=4\",
+        \"artistId\":1064704489, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Slayer
+        of Ache\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/slayer-of-ache/id302479455?uo=4\",
+        \"artistId\":302479455, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Ferrad
+        The Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/ferrad-the-slayer/id1034402289?uo=4\",
+        \"artistId\":1034402289, \"primaryGenreName\":\"Rock\", \"primaryGenreId\":21},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"The
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/the-slayer/id824160103?uo=4\",
+        \"artistId\":824160103, \"primaryGenreName\":\"Dance\", \"primaryGenreId\":17},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Demon
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/demon-slayer/id950295857?uo=4\",
+        \"artistId\":950295857, \"primaryGenreName\":\"Christian & Gospel\", \"primaryGenreId\":22},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Baddy
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/baddy-slayer/id373289883?uo=4\",
+        \"artistId\":373289883, \"primaryGenreName\":\"Rock\", \"primaryGenreId\":21},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Dani
+        Row\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/dani-row/id805432749?uo=4\",
+        \"artistId\":805432749, \"primaryGenreName\":\"Dance\", \"primaryGenreId\":17},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Ben
+        Fisher\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/ben-fisher/id1066987593?uo=4\",
+        \"artistId\":1066987593, \"primaryGenreName\":\"Dance\", \"primaryGenreId\":17},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Centella\",
+        \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/centella/id1247038613?uo=4\",
+        \"artistId\":1247038613, \"primaryGenreName\":\"Electronic\", \"primaryGenreId\":7},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Hiprox
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/hiprox-slayer/id542568008?uo=4\",
+        \"artistId\":542568008, \"primaryGenreName\":\"Dance\", \"primaryGenreId\":17},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"King
+        Slayer Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/king-slayer-slayer/id875504390?uo=4\",
+        \"artistId\":875504390, \"primaryGenreName\":\"Alternative\", \"primaryGenreId\":20},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Maggot
+        Slayer Overdrive\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/maggot-slayer-overdrive/id601716718?uo=4\",
+        \"artistId\":601716718, \"primaryGenreName\":\"Alternative\", \"primaryGenreId\":20},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Jesse
+        Bullitt\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/jesse-bullitt/id1055192227?uo=4\",
+        \"artistId\":1055192227, \"primaryGenreName\":\"Dance\", \"primaryGenreId\":17},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"DaweOne\",
+        \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/daweone/id587556446?uo=4\",
+        \"artistId\":587556446, \"primaryGenreName\":\"Dance\", \"primaryGenreId\":17},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Boddy
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/boddy-slayer/id348420974?uo=4\",
+        \"artistId\":348420974}, \n{\"wrapperType\":\"artist\", \"artistType\":\"Author\",
+        \"artistName\":\"Ben Fisher\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/author/ben-fisher/id507959364?mt=11&uo=4\",
+        \"artistId\":507959364, \"primaryGenreName\":\"Graphic Novels\", \"primaryGenreId\":10015},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Jack
+        the Giant Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/jack-the-giant-slayer/id616079424?uo=4\",
+        \"artistId\":616079424, \"primaryGenreName\":\"World\", \"primaryGenreId\":8030},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"J-Den
+        da Descender\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/j-den-da-descender/id1064704486?uo=4\",
+        \"artistId\":1064704486, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"K
+        Slayer\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/k-slayer/id885188064?uo=4\",
+        \"artistId\":885188064, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Gameplayer\",
+        \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/gameplayer/id1006781623?uo=4\",
+        \"artistId\":1006781623, \"primaryGenreName\":\"House\", \"primaryGenreId\":1048},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Basscroster\",
+        \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/basscroster/id923880090?uo=4\",
+        \"artistId\":923880090, \"primaryGenreName\":\"House\", \"primaryGenreId\":1048},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Kofi
+        Stone\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/kofi-stone/id1260654418?uo=4\",
+        \"artistId\":1260654418, \"primaryGenreName\":\"Hip-Hop/Rap\", \"primaryGenreId\":18},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Housephonics\",
+        \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/housephonics/id488048206?uo=4\",
+        \"artistId\":488048206, \"amgArtistId\":2580436, \"primaryGenreName\":\"Dance\",
+        \"primaryGenreId\":17}, \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\",
+        \"artistName\":\"Ben Fisher\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/ben-fisher/id1097136829?uo=4\",
+        \"artistId\":1097136829, \"primaryGenreName\":\"Dance\", \"primaryGenreId\":17},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Dj
+        Slayer Bopper\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/dj-slayer-bopper/id1229988376?uo=4\",
+        \"artistId\":1229988376, \"primaryGenreName\":\"Alternative\", \"primaryGenreId\":20},
+        \n{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"The
+        D4rk\", \"artistLinkUrl\":\"https://itunes.apple.com/gb/artist/the-d4rk/id1032226417?uo=4\",
+        \"artistId\":1032226417, \"primaryGenreName\":\"House\", \"primaryGenreId\":1048}]\n}\n\n\n"
     http_version: 
-  recorded_at: Fri, 04 Aug 2017 22:02:51 GMT
+  recorded_at: Sun, 06 Aug 2017 00:17:24 GMT
 recorded_with: VCR 3.0.3

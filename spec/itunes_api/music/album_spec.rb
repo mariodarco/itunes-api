@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe ItunesApi::Music::Album, type: :model do
-  let(:collection_id) { 696_312_806 }
+  let(:collection_id) { 1_038_991_417 }
   let(:store) { 'gb' }
 
   describe '.find_by_collection_id' do
@@ -13,12 +13,12 @@ RSpec.describe ItunesApi::Music::Album, type: :model do
 
     it { is_expected.to be_a described_class }
 
-    it { expect(subject.name).to eql 'Ed Hunter' }
+    it { expect(subject.name).to eql 'Reign In Blood' }
   end
 end
 
 RSpec.describe ItunesApi::Music::Album, type: :model do
-  let(:apple_id) { 3_996_865 }
+  let(:apple_id) { 414_425 }
   let(:store) { 'gb' }
 
   describe '.for_artist' do
@@ -38,23 +38,26 @@ RSpec.describe ItunesApi::Music::Album, type: :model do
 
   let(:attributes) do
     [
-      'Iron Maiden',
+      'Slayer',
       artwork_link,
-      696_312_806,
+      1_038_991_417,
       explicitness,
       'Metal',
       link,
-      'Ed Hunter',
+      'Reign In Blood',
       release_on,
       store,
-      20
+      10
     ]
+  end
+
+  let(:link) do
+    'https://itunes.apple.com/gb/album/reign-in-blood/id1038991417?uo=4'
   end
 
   let(:artwork_link) { 'http://.../source/100x100bb.jpg' }
   let(:explicitness) { '' }
-  let(:link) { 'https://itunes.apple.com/gb/album/ed-hunter/id696312806?uo=4' }
-  let(:release_on) { Date.parse '1999-05-17' }
+  let(:release_on) { Date.parse '1986-10-07' }
   let(:store) { 'gb' }
 
   describe '#availability' do
@@ -68,7 +71,7 @@ RSpec.describe ItunesApi::Music::Album, type: :model do
       before do
         allow(Date)
           .to receive(:today)
-          .and_return(Date.parse('1998-01-01'))
+          .and_return(Date.parse('1986-01-01'))
       end
 
       it { is_expected.to be :pre_release_streaming }
@@ -106,17 +109,17 @@ RSpec.describe ItunesApi::Music::Album, type: :model do
 
     let(:expected_hash) do
       {
-        artist: 'Iron Maiden',
+        artist: 'Slayer',
         artwork: artwork_link,
         availability: :streaming,
-        collection_id: 696_312_806,
+        collection_id: 1_038_991_417,
         explicit: false,
         genre: 'Metal',
         link: link,
-        name: 'Ed Hunter',
+        name: 'Reign In Blood',
         release_on: release_on,
         store: 'gb',
-        track_count: 20
+        track_count: 10
       }
     end
 

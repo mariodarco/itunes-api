@@ -4,11 +4,11 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
   describe '.all_apple_ids' do
     subject { described_class.all_apple_ids(name, store) }
 
-    let(:artist_1) { double(ItunesApi::Music::Artist, apple_id: 666) }
-    let(:artist_2) { double(ItunesApi::Music::Artist, apple_id: 999) }
-    let(:artists) { [artist_1, artist_2] }
-    let(:name) { 'Satan' }
-    let(:store) { 'us' }
+    let(:artists) { [slayer, slayer_2] }
+    let(:name) { 'Slayer' }
+    let(:slayer) { double(ItunesApi::Music::Artist, apple_id: 414_425) }
+    let(:slayer_2) { double(ItunesApi::Music::Artist, apple_id: 733_483_578) }
+    let(:store) { 'gb' }
 
     before do
       allow(described_class)
@@ -17,7 +17,7 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
         .and_return(artists)
     end
 
-    it { is_expected.to eql [666, 999] }
+    it { is_expected.to eql [414_425, 733_483_578] }
   end
 end
 
@@ -25,15 +25,15 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
   describe '.find_all_by_name' do
     subject { described_class.find_all_by_name(name, store) }
 
-    let(:attributes_1) { ['', '', '', '', 'Iron Maiden', ''] }
-    let(:attributes_2) { ['', '', '', '', 'Iron Maiden Tribute', ''] }
-    let(:result_1) { double(result_class, attributes: attributes_1) }
-    let(:result_2) { double(result_class, attributes: attributes_2) }
+    let(:attributes_slayer) { ['', '', '', '', 'Slayer', ''] }
+    let(:attributes_slayer_2) { ['', '', '', '', 'Princess Slayer', ''] }
+    let(:slayer) { double(result_class, attributes: attributes_slayer) }
+    let(:slayer_2) { double(result_class, attributes: attributes_slayer_2) }
     let(:result_class) { ItunesApi::Music::Results::Artist }
-    let(:result_names) { ['Iron Maiden', 'Iron Maiden Tribute'] }
-    let(:results) { [result_1, result_2] }
-    let(:name) { 'Maiden' }
-    let(:store) { 'us' }
+    let(:result_names) { ['Slayer', 'Princess Slayer'] }
+    let(:results) { [slayer, slayer_2] }
+    let(:name) { 'Slayer' }
+    let(:store) { 'gb' }
 
     before do
       allow(ItunesApi::Music::Requests::Search)
@@ -53,9 +53,9 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
   describe '.find_by_apple_id' do
     subject { described_class.find_by_apple_id(apple_id, store) }
 
-    let(:apple_id) { 666 }
-    let(:attributes) { ['', '', '', '', 'Iron Maiden', ''] }
-    let(:store) { 'us' }
+    let(:apple_id) { 414_425 }
+    let(:attributes) { ['', '', '', '', 'Slayer', ''] }
+    let(:store) { 'gb' }
 
     let(:result) do
       double(ItunesApi::Music::Results::Artist, attributes: attributes)
@@ -70,7 +70,7 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
 
     it { is_expected.to be_a described_class }
 
-    it { expect(subject.name).to eql 'Iron Maiden' }
+    it { expect(subject.name).to eql 'Slayer' }
   end
 end
 
@@ -79,9 +79,10 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
     described_class.new(*attributes)
   end
 
-  let(:attributes) { [4_906, apple_id, 'Rock', 'http', 'Metallica', store] }
+  let(:attributes) { [5_453, apple_id, 'Metal', link, 'Slayer', store] }
 
-  let(:apple_id) { 3_996_865 }
+  let(:apple_id) { 414_425 }
+  let(:link) { 'https://itunes.apple.com/gb/artist/slayer/id414425?uo=4' }
   let(:store) { 'gb' }
 
   describe '#albums' do
@@ -100,11 +101,13 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
     described_class.new(amg_id, apple_id, genre, link, name, store)
   end
 
-  let(:amg_id) { 4_906 }
-  let(:apple_id) { 3_996_865 }
-  let(:genre) { 'Rock' }
-  let(:link) { 'https://itunes.apple.com/gb/artist/metallica/id3996865?uo=4' }
-  let(:name) { 'Metallica' }
+  let(:attributes) { [5_453, apple_id, 'Metal', link, 'Slayer', store] }
+
+  let(:amg_id) { 5_453 }
+  let(:apple_id) { 414_425 }
+  let(:genre) { 'Metal' }
+  let(:link) { 'https://itunes.apple.com/gb/artist/slayer/id414425?uo=4' }
+  let(:name) { 'Slayer' }
   let(:store) { 'gb' }
 
   describe '#to_hash' do
@@ -112,11 +115,11 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
 
     let(:expected_hash) do
       {
-        amg_id: 4_906,
-        apple_id: 3_996_865,
-        genre: 'Rock',
-        link: 'https://itunes.apple.com/gb/artist/metallica/id3996865?uo=4',
-        name: 'Metallica',
+        amg_id: 5_453,
+        apple_id: 414_425,
+        genre: 'Metal',
+        link: 'https://itunes.apple.com/gb/artist/slayer/id414425?uo=4',
+        name: 'Slayer',
         store: 'gb'
       }
     end
@@ -124,4 +127,3 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
     it { is_expected.to eql expected_hash }
   end
 end
-
