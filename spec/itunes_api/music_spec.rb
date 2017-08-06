@@ -69,3 +69,18 @@ RSpec.describe ItunesApi::Music do
     it { is_expected.to all be_a(ItunesApi::Music::Album) }
   end
 end
+
+RSpec.describe ItunesApi::Music do
+  let(:collection_id) { 696_312_806 }
+  let(:store) { :gb }
+
+  describe '.find_by_collection_id' do
+    subject do
+      VCR.use_cassette('album') do
+        described_class.find_by_collection_id(collection_id, store)
+      end
+    end
+
+    it { is_expected.to be_a(ItunesApi::Music::Album) }
+  end
+end

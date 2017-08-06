@@ -64,6 +64,17 @@ To return only the albums for a specific artist, based on the artist's Apple id
 ItunesApi::Music.albums_for_artist(265766061)
 ```
 
+To return a specific album, based on the album's collection id
+
+```ruby
+ItunesApi::Music.find_by_collection_id(collection_id, store)
+```
+
+Note that each request that returns albums does not automatically return songs.
+They are lazily fetched when calling album.tracklist.
+
+---
+
 An argument holding the country code can be used to look into different stores than the default one
 
 ```ruby
@@ -76,12 +87,14 @@ ItunesApi::Music.albums_for_artist(265766061, :es)
 ## Development
 
 Ruby version:
-```
+
+```text
 2.4.1
 ```
 
 Fork the project, clone the repository and bundle:
-```
+
+```bash
 >> git clone https://github.com/{your_account}/itunes-api.git
 >> cd itunes-api
 ```
@@ -92,7 +105,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/mariodarco/itunes-api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/mariodarco/itunes-api](https://github.com/mariodarco/itunes-api). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 

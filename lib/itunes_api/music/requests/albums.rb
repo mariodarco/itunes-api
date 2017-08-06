@@ -4,13 +4,17 @@ module ItunesApi
       # Allows querying the API via lookup for albums.
       class Albums
         include Request
-        attr_reader_init :apple_id, :store
-        selfie :find_by_apple_id
+        attr_reader_init :search_id, :store
+        selfie :find_by_apple_id, :find_by_collection_id
 
         def find_by_apple_id
           unwrapped_results.map do |result|
             Results::Album.new(result, store)
           end
+        end
+
+        def find_by_collection_id
+          find_by_apple_id.first
         end
 
         private
@@ -21,7 +25,7 @@ module ItunesApi
 
         def query
           {
-            id: apple_id,
+            id: search_id,
             country: store.to_s.upcase,
             entity: :album,
             limit: LIMIT

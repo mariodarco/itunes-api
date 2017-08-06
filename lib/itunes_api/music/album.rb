@@ -3,19 +3,33 @@ module ItunesApi
   module Music
     # Wrapper for album results.
     class Album
-      attr_reader_init :artwork,
+      attr_reader_init :artist,
+                       :artwork,
                        :collection_id,
+                       :explicitness,
                        :genre,
+                       :link,
                        :name,
                        :release_on,
-                       :store
+                       :store,
+                       :track_count
 
       class << self
+        def find_by_collection_id(collection_id, store)
+          result = album(collection_id, store)
+
+          new(*result.attributes) if result
+        end
+
         def for_artist(apple_id, store)
           albums(apple_id, store).map { |album| new(*album.attributes) }
         end
 
         private
+
+        def album(collection_id, store)
+          Requests::Albums.find_by_collection_id(collection_id, store)
+        end
 
         def albums(apple_id, store)
           Requests::Albums.find_by_apple_id(apple_id, store)
@@ -26,14 +40,23 @@ module ItunesApi
         @availability ||= build_availability
       end
 
+      def explicit?
+        explicitness == 'explicit'
+      end
+
       def to_hash
         {
+          artist: artist,
           artwork: artwork,
           availability: availability,
           collection_id: collection_id,
+          explicit: explicit?,
+          genre: genre,
+          link: link,
           name: name,
           release_on: release_on,
-          store: store
+          store: store,
+          track_count: track_count
         }
       end
 

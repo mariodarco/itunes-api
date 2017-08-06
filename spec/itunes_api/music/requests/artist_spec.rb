@@ -6,7 +6,7 @@ RSpec.describe ItunesApi::Music::Requests::Artist, type: :model do
   let(:apple_id) { 3_996_865 }
   let(:store) { 'gb' }
 
-  describe '#find_by_apple_id?' do
+  describe '#find_by_apple_id' do
     subject { VCR.use_cassette('lookup') { instance.find_by_apple_id } }
 
     it { is_expected.to be_a ItunesApi::Music::Results::Artist }

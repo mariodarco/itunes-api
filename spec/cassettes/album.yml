@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://itunes.apple.com/lookup?country=GB&entity=album&id=696312806&limit=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      x-apple-jingle-correlation-key:
+      - GTHIFO4LYCUD2XV3HX3TMPSCWU
+      x-apple-application-site:
+      - MR22
+      access-control-allow-origin:
+      - "*"
+      apple-originating-system:
+      - MZStoreServices
+      strict-transport-security:
+      - max-age=31536000
+      x-apple-translated-wo-url:
+      - "/WebObjects/MZStoreServices.woa/ws/wsLookup?country=GB&entity=album&id=696312806&limit=200&urlDesc="
+      apple-tk:
+      - 'false'
+      x-apple-orig-url:
+      - https://itunes.apple.com/lookup?country=GB&entity=album&id=696312806&limit=200
+      apple-seq:
+      - '0'
+      content-type:
+      - text/javascript; charset=utf-8
+      apple-timing-app:
+      - 17 ms
+      content-disposition:
+      - attachment; filename=1.txt
+      x-apple-application-instance:
+      - '4024013'
+      x-webobjects-loadaverage:
+      - '0'
+      x-content-type-options:
+      - nosniff
+      x-apple-request-uuid:
+      - 34ce82bb-8bc0-a83d-5ebb-3df7363e42b5
+      vary:
+      - Accept-Encoding
+      cache-control:
+      - max-age=82690
+      date:
+      - Sat, 05 Aug 2017 23:24:45 GMT
+      content-length:
+      - '1046'
+      x-cache:
+      - TCP_MISS from a23-3-15-60.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
+        (-)
+      x-true-cache-key:
+      - "/L/itunes.apple.com/lookup ci2=country=GB&entity=album&id=696312806&limit=200__"
+      connection:
+      - close
+      x-cache-remote:
+      - TCP_MISS from a104-103-232-82.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
+        (-)
+      x-apple-partner:
+      - origin.0
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CgoKewogInJlc3VsdENvdW50IjoxLAogInJlc3VsdHMiOiBbCnsid3JhcHBlclR5cGUiOiJjb2xsZWN0aW9uIiwgImNvbGxlY3Rpb25UeXBlIjoiQWxidW0iLCAiYXJ0aXN0SWQiOjU0NjM4MSwgImNvbGxlY3Rpb25JZCI6Njk2MzEyODA2LCAiYW1nQXJ0aXN0SWQiOjQ1NjAsICJhcnRpc3ROYW1lIjoiSXJvbiBNYWlkZW4iLCAiY29sbGVjdGlvbk5hbWUiOiJFZCBIdW50ZXIiLCAiY29sbGVjdGlvbkNlbnNvcmVkTmFtZSI6IkVkIEh1bnRlciIsICJhcnRpc3RWaWV3VXJsIjoiaHR0cHM6Ly9pdHVuZXMuYXBwbGUuY29tL2diL2FydGlzdC9pcm9uLW1haWRlbi9pZDU0NjM4MT91bz00IiwgImNvbGxlY3Rpb25WaWV3VXJsIjoiaHR0cHM6Ly9pdHVuZXMuYXBwbGUuY29tL2diL2FsYnVtL2VkLWh1bnRlci9pZDY5NjMxMjgwNj91bz00IiwgImFydHdvcmtVcmw2MCI6Imh0dHA6Ly9pczEubXpzdGF0aWMuY29tL2ltYWdlL3RodW1iL011c2ljNjAvdjQvYjUvZWMvMTgvYjVlYzE4YTctNWM2YS1kZDA0LTQ0ZDctY2NiNjE5ZDE5M2IxL3NvdXJjZS82MHg2MGJiLmpwZyIsICJhcnR3b3JrVXJsMTAwIjoiaHR0cDovL2lzMS5tenN0YXRpYy5jb20vaW1hZ2UvdGh1bWIvTXVzaWM2MC92NC9iNS9lYy8xOC9iNWVjMThhNy01YzZhLWRkMDQtNDRkNy1jY2I2MTlkMTkzYjEvc291cmNlLzEwMHgxMDBiYi5qcGciLCAiY29sbGVjdGlvblByaWNlIjoxMS45OSwgImNvbGxlY3Rpb25FeHBsaWNpdG5lc3MiOiJleHBsaWNpdCIsICJjb250ZW50QWR2aXNvcnlSYXRpbmciOiJFeHBsaWNpdCIsICJ0cmFja0NvdW50IjoyMCwgImNvcHlyaWdodCI6IuKElyAxOTk5IFRoZSBjb3B5cmlnaHQgaW4gdGhpcyBjb21waWxhdGlvbiBpcyBvd25lZCBieSBJcm9uIE1haWRlbiBIb2xkaW5ncyBMdGQgdW5kZXIgZXhjbHVzaXZlIGxpY2VuY2UgdG8gUGFybG9waG9uZSBSZWNvcmRzIEx0ZCIsICJjb3VudHJ5IjoiR0JSIiwgImN1cnJlbmN5IjoiR0JQIiwgInJlbGVhc2VEYXRlIjoiMTk5OS0wNS0xN1QwNzowMDowMFoiLCAicHJpbWFyeUdlbnJlTmFtZSI6Ik1ldGFsIn1dCn0KCgo=
+    http_version: 
+  recorded_at: Sat, 05 Aug 2017 23:24:44 GMT
+recorded_with: VCR 3.0.3
