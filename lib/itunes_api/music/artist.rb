@@ -5,30 +5,27 @@ module ItunesApi
       attr_reader_init :amg_id, :apple_id, :genre, :link, :name, :store
 
       class << self
-        def all_apple_ids(name, store)
-          find_all_by_name(name, store).map(&:apple_id)
-        end
-
-        def find_all_by_name(name, store)
+        def find_by_name(name, store)
           Requests::Search.artists(name, store).map do |result|
             new(*result.attributes)
           end
         end
 
         def find_by_apple_id(apple_id, store)
-          artist = artist(apple_id, store)
-          artist ? new(*artist.attributes) : nil
+          result = artists(apple_id, store).first
+
+          new(*result.attributes) if result
         end
 
         private
 
-        def artist(apple_id, store)
-          Requests::Artist.find_by_apple_id(apple_id, store)
+        def artists(id, store)
+          Requests::Artist.find_by_id(id, store)
         end
       end
 
       def albums
-        @albums ||= Album.for_artist(apple_id, store)
+        @albums ||= Album.find_by_apple_id(apple_id, store)
       end
 
       def to_hash

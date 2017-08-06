@@ -4,13 +4,13 @@ module ItunesApi
       # Allows querying the API via lookup for artists.
       class Artist
         include Request
-        attr_reader_init :apple_id, :store
-        selfie :find_by_apple_id
+        attr_reader_init :serch_id, :store
+        selfie :find_by_id
 
-        def find_by_apple_id
-          return nil unless results.any?
-
-          Results::Artist.new(results.first, store)
+        def find_by_id
+          unwrapped_results(:artist).map do |result|
+            Results::Artist.new(result, store)
+          end
         end
 
         private
@@ -21,7 +21,7 @@ module ItunesApi
 
         def query
           {
-            id: apple_id,
+            id: serch_id,
             country: store.to_s.upcase,
             limit: LIMIT
           }

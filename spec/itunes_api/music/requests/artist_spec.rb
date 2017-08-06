@@ -7,12 +7,13 @@ RSpec.describe ItunesApi::Music::Requests::Artist, type: :model do
   let(:store) { 'gb' }
 
   describe '#find_by_apple_id' do
-    subject { VCR.use_cassette('lookup') { instance.find_by_apple_id } }
+    subject { VCR.use_cassette('artist') { instance.find_by_id } }
 
-    it { is_expected.to be_a ItunesApi::Music::Results::Artist }
+    it { is_expected.to be_a Array }
+    it { is_expected.to all be_a ItunesApi::Music::Results::Artist }
 
     it 'returns the expected result' do
-      expect(subject.attributes).to eql [
+      expect(subject.first.attributes).to eql [
         5_453,
         414_425,
         'Metal',

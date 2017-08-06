@@ -5,16 +5,12 @@ module ItunesApi
       class Albums
         include Request
         attr_reader_init :search_id, :store
-        selfie :find_by_apple_id, :find_by_collection_id
+        selfie :find_by_id
 
-        def find_by_apple_id
-          unwrapped_results.map do |result|
+        def find_by_id
+          unwrapped_results(:collection).map do |result|
             Results::Album.new(result, store)
           end
-        end
-
-        def find_by_collection_id
-          find_by_apple_id.first
         end
 
         private
@@ -25,19 +21,11 @@ module ItunesApi
 
         def query
           {
-            id: search_id,
             country: store.to_s.upcase,
             entity: :album,
+            id: search_id,
             limit: LIMIT
           }
-        end
-
-        def unwrapped_results
-          return [] unless results.any?
-
-          results.find_all do |wrappers|
-            wrappers['wrapperType'] == 'collection'
-          end
         end
       end
     end

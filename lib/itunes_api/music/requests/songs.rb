@@ -4,12 +4,12 @@ module ItunesApi
       # Allows querying the API via lookup for album songs.
       class Songs
         include Request
-        attr_reader_init :collection_id, :store
-        selfie :find_by_collection_id
+        attr_reader_init :search_id, :store
+        selfie :find_by_id
 
-        def find_by_collection_id
-          unwrapped_results.map do |result|
-            Results::Song.new(result)
+        def find_by_id
+          unwrapped_results(:track).map do |result|
+            Results::Song.new(result, store)
           end
         end
 
@@ -21,20 +21,12 @@ module ItunesApi
 
         def query
           {
-            entity: 'song',
-            id: collection_id,
             country: store.to_s.upcase,
+            entity: 'song',
+            id: search_id,
             limit: LIMIT,
             sort: 'trackNumber'
           }
-        end
-
-        def unwrapped_results
-          return [] unless results.any?
-
-          results.find_all do |wrappers|
-            wrappers['wrapperType'] == 'track'
-          end
         end
       end
     end

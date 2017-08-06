@@ -7,6 +7,7 @@ module ItunesApi
   module Music
     # Starting module for request wrappers
     module Requests
+
     end
   end
 end

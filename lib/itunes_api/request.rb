@@ -9,16 +9,24 @@ module ItunesApi
 
     private
 
-    def parsed_response
-      JSON.parse(response.body)
-    end
-
     def connection
       Faraday.new(url: BASE_URL)
     end
 
+    def parsed_response
+      JSON.parse(response.body)
+    end
+
     def response
       connection.get(action, query)
+    end
+
+    def unwrapped_results(type)
+      return [] unless results.any?
+
+      results.find_all do |wrappers|
+        wrappers['wrapperType'] == type.to_s
+      end
     end
   end
 end

@@ -15,9 +15,9 @@ http_interactions:
       message: 
     headers:
       x-apple-jingle-correlation-key:
-      - A5JLOKZYMFXPZPX4D22ZLNRPV4
+      - ZHLXNHYRRX7NIJBC4LV7NGNE54
       x-apple-application-site:
-      - MR22
+      - ST11
       access-control-allow-origin:
       - "*"
       apple-originating-system:
@@ -35,34 +35,34 @@ http_interactions:
       content-type:
       - text/javascript; charset=utf-8
       apple-timing-app:
-      - 8 ms
+      - 16 ms
       content-disposition:
       - attachment; filename=1.txt
       x-apple-application-instance:
-      - '4068014'
+      - '2000159'
       x-webobjects-loadaverage:
       - '0'
       x-content-type-options:
       - nosniff
       x-apple-request-uuid:
-      - 0752b72b-3861-6efc-befc-1eb595b62faf
+      - c9d7769f-118d-fed4-2422-e2ebf699a4ef
       vary:
       - Accept-Encoding
       cache-control:
       - max-age=86400
       date:
-      - Sun, 06 Aug 2017 00:24:22 GMT
+      - Sun, 06 Aug 2017 21:27:35 GMT
       content-length:
       - '278'
       x-cache:
-      - TCP_MISS from a173-222-211-174.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
+      - TCP_MISS from a173-222-211-175.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
         (-)
       x-true-cache-key:
       - "/L/itunes.apple.com/lookup ci2=country=GB&id=414425&limit=200__"
       connection:
       - close
       x-cache-remote:
-      - TCP_MISS from a104-103-232-82.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
+      - TCP_MISS from a104-103-232-92.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
         (-)
       x-apple-partner:
       - origin.0
@@ -80,5 +80,5 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Sun, 06 Aug 2017 00:24:22 GMT
+  recorded_at: Sun, 06 Aug 2017 21:27:35 GMT
 recorded_with: VCR 3.0.3

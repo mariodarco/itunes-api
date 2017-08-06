@@ -9,24 +9,28 @@ module ItunesApi
   # Public interface for the Music Api
   module Music
     class << self
-      def all_apple_ids(name, store = default_store)
-        Artist.all_apple_ids(name, store)
-      end
-
-      def all_artists_by_name(name, store = default_store)
-        Artist.find_all_by_name(name, store)
+      def find_by_name(name, store = default_store)
+        Artist.find_by_name(name, store)
       end
 
       def find_by_apple_id(apple_id, store = default_store)
         Music::Artist.find_by_apple_id(apple_id, store)
       end
 
-      def albums_for_artist(apple_id, store = default_store)
-        Music::Album.for_artist(apple_id, store)
+      def find_albums_by_apple_id(apple_id, store = default_store)
+        Music::Album.find_by_apple_id(apple_id, store)
       end
 
-      def find_by_collection_id(collection_id, store)
+      def find_by_collection_id(collection_id, store = default_store)
         Music::Album.find_by_collection_id(collection_id, store)
+      end
+
+      def find_songs_by_collection_id(collection_id, store = default_store)
+        Music::Song.find_by_collection_id(collection_id, store)
+      end
+
+      def find_by_track_id(track_id, store = default_store)
+        Music::Song.find_by_track_id(track_id, store)
       end
 
       private

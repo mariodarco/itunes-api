@@ -16,23 +16,19 @@ module ItunesApi
 
       class << self
         def find_by_collection_id(collection_id, store)
-          result = album(collection_id, store)
+          result = albums(collection_id, store).first
 
           new(*result.attributes) if result
         end
 
-        def for_artist(apple_id, store)
+        def find_by_apple_id(apple_id, store)
           albums(apple_id, store).map { |album| new(*album.attributes) }
         end
 
         private
 
-        def album(collection_id, store)
-          Requests::Albums.find_by_collection_id(collection_id, store)
-        end
-
-        def albums(apple_id, store)
-          Requests::Albums.find_by_apple_id(apple_id, store)
+        def albums(id, store)
+          Requests::Albums.find_by_id(id, store)
         end
       end
 
@@ -61,7 +57,7 @@ module ItunesApi
       end
 
       def tracklist
-        @tracklist ||= songs.map { |song| Song.new(*song.attributes) }
+        @tracklist ||= Song.find_by_collection_id(collection_id, store)
       end
 
       private
@@ -78,10 +74,6 @@ module ItunesApi
 
       def pre_release?
         release_on > Date.today
-      end
-
-      def songs
-        @songs ||= Requests::Songs.find_by_collection_id(collection_id, store)
       end
     end
   end

@@ -4,25 +4,10 @@ RSpec.describe ItunesApi::Music do
   let(:name) { 'Slayer' }
   let(:store) { :gb }
 
-  describe '.all_apple_ids' do
-    subject do
-      VCR.use_cassette('search') { described_class.all_apple_ids(name, store) }
-    end
-
-    it { is_expected.to be_a Array }
-    it { is_expected.to all be_a Integer }
-    it { is_expected.to be_include 414_425 }
-  end
-end
-
-RSpec.describe ItunesApi::Music do
-  let(:name) { 'Slayer' }
-  let(:store) { :gb }
-
-  describe '.all_artists_by_name' do
+  describe '.find_by_name' do
     subject do
       VCR.use_cassette('search') do
-        described_class.all_artists_by_name(name, store)
+        described_class.find_by_name(name, store)
       end
     end
 
@@ -41,7 +26,7 @@ RSpec.describe ItunesApi::Music do
 
   describe '.find_by_apple_id' do
     subject do
-      VCR.use_cassette('lookup') do
+      VCR.use_cassette('artist') do
         described_class.find_by_apple_id(apple_id, store)
       end
     end
@@ -53,10 +38,10 @@ RSpec.describe ItunesApi::Music do
     end
   end
 
-  describe '.albums_for_artist' do
+  describe '.find_albums_by_apple_id' do
     subject do
       VCR.use_cassette('albums') do
-        described_class.albums_for_artist(apple_id, store)
+        described_class.find_albums_by_apple_id(apple_id, store)
       end
     end
 

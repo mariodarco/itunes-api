@@ -1,29 +1,8 @@
 require 'spec_helper'
 
 RSpec.describe ItunesApi::Music::Artist, type: :model do
-  describe '.all_apple_ids' do
-    subject { described_class.all_apple_ids(name, store) }
-
-    let(:artists) { [slayer, slayer_2] }
-    let(:name) { 'Slayer' }
-    let(:slayer) { double(ItunesApi::Music::Artist, apple_id: 414_425) }
-    let(:slayer_2) { double(ItunesApi::Music::Artist, apple_id: 733_483_578) }
-    let(:store) { 'gb' }
-
-    before do
-      allow(described_class)
-        .to receive(:find_all_by_name)
-        .with(name, store)
-        .and_return(artists)
-    end
-
-    it { is_expected.to eql [414_425, 733_483_578] }
-  end
-end
-
-RSpec.describe ItunesApi::Music::Artist, type: :model do
-  describe '.find_all_by_name' do
-    subject { described_class.find_all_by_name(name, store) }
+  describe '.find_by_name' do
+    subject { described_class.find_by_name(name, store) }
 
     let(:attributes_slayer) { ['', '', '', '', 'Slayer', ''] }
     let(:attributes_slayer_2) { ['', '', '', '', 'Princess Slayer', ''] }
@@ -57,15 +36,15 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
     let(:attributes) { ['', '', '', '', 'Slayer', ''] }
     let(:store) { 'gb' }
 
-    let(:result) do
-      double(ItunesApi::Music::Results::Artist, attributes: attributes)
+    let(:results) do
+      [double(ItunesApi::Music::Results::Artist, attributes: attributes)]
     end
 
     before do
       allow(ItunesApi::Music::Requests::Artist)
-        .to receive(:find_by_apple_id)
+        .to receive(:find_by_id)
         .with(apple_id, store)
-        .and_return(result)
+        .and_return(results)
     end
 
     it { is_expected.to be_a described_class }
@@ -88,7 +67,7 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
   describe '#albums' do
     it 'delegates the Album class to retrieve albums' do
       expect(ItunesApi::Music::Album)
-        .to receive(:for_artist)
+        .to receive(:find_by_apple_id)
         .with(apple_id, store)
 
       instance.albums
