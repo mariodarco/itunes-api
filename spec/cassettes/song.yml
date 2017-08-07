@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://itunes.apple.com/lookup?country=GB&entity=song&id=1038991877&limit=200&sort=trackNumber
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      x-apple-jingle-correlation-key:
+      - 44LAD3OQALW5AIG2D2444RGVGE
+      x-apple-application-site:
+      - MR22
+      access-control-allow-origin:
+      - "*"
+      apple-originating-system:
+      - MZStoreServices
+      strict-transport-security:
+      - max-age=31536000
+      x-apple-translated-wo-url:
+      - "/WebObjects/MZStoreServices.woa/ws/wsLookup?country=GB&entity=song&id=1038991877&limit=200&sort=trackNumber&urlDesc="
+      apple-tk:
+      - 'false'
+      x-apple-orig-url:
+      - https://itunes.apple.com/lookup?country=GB&entity=song&id=1038991877&limit=200&sort=trackNumber
+      apple-seq:
+      - '0'
+      content-type:
+      - text/javascript; charset=utf-8
+      apple-timing-app:
+      - 15 ms
+      content-disposition:
+      - attachment; filename=1.txt
+      x-apple-application-instance:
+      - '4012015'
+      x-webobjects-loadaverage:
+      - '0'
+      x-content-type-options:
+      - nosniff
+      x-apple-request-uuid:
+      - e71601ed-d002-edd0-20da-1eb9ce44d531
+      vary:
+      - Accept-Encoding
+      cache-control:
+      - max-age=86400
+      date:
+      - Mon, 07 Aug 2017 20:52:22 GMT
+      content-length:
+      - '1457'
+      x-cache:
+      - TCP_MISS from a23-3-15-25.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
+        (-)
+      x-true-cache-key:
+      - "/L/itunes.apple.com/lookup ci2=country=GB&entity=song&id=1038991877&limit=200&sort=trackNumber__"
+      connection:
+      - close
+      x-cache-remote:
+      - TCP_MISS from a104-103-232-124.deploy.akamaitechnologies.com (AkamaiGHost/9.0.4-20506866)
+        (-)
+      x-apple-partner:
+      - origin.0
+    body:
+      encoding: UTF-8
+      string: |2+
+
+
+
+        {
+         "resultCount":1,
+         "results": [
+        {"wrapperType":"track", "kind":"song", "artistId":414425, "collectionId":1038991417, "trackId":1038991877, "artistName":"Slayer", "collectionName":"Reign In Blood", "trackName":"Raining Blood", "collectionCensoredName":"Reign In Blood", "trackCensoredName":"Raining Blood", "artistViewUrl":"https://itunes.apple.com/gb/artist/slayer/id414425?uo=4", "collectionViewUrl":"https://itunes.apple.com/gb/album/raining-blood/id1038991417?i=1038991877&uo=4", "trackViewUrl":"https://itunes.apple.com/gb/album/raining-blood/id1038991417?i=1038991877&uo=4", "previewUrl":"http://a622.phobos.apple.com/us/r30/Music3/v4/73/d8/85/73d885fe-d3ae-78c0-055a-345bb8c385ac/mzaf_3991867579915407602.plus.aac.p.m4a", "artworkUrl30":"http://is4.mzstatic.com/image/thumb/Music3/v4/ee/f9/ed/eef9ed9f-5539-6356-319c-d91676811eab/source/30x30bb.jpg", "artworkUrl60":"http://is4.mzstatic.com/image/thumb/Music3/v4/ee/f9/ed/eef9ed9f-5539-6356-319c-d91676811eab/source/60x60bb.jpg", "artworkUrl100":"http://is4.mzstatic.com/image/thumb/Music3/v4/ee/f9/ed/eef9ed9f-5539-6356-319c-d91676811eab/source/100x100bb.jpg", "collectionPrice":8.99, "trackPrice":0.99, "releaseDate":"1986-10-07T07:00:00Z", "collectionExplicitness":"explicit", "trackExplicitness":"notExplicit", "discCount":1, "discNumber":1, "trackCount":10, "trackNumber":10, "trackTimeMillis":222377, "country":"GBR", "currency":"GBP", "primaryGenreName":"Metal", "isStreamable":true}]
+        }
+
+
+    http_version: 
+  recorded_at: Mon, 07 Aug 2017 20:52:22 GMT
+recorded_with: VCR 3.0.3

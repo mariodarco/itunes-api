@@ -35,19 +35,23 @@ module ItunesApi
         end
       end
 
+      def explicit?
+        explicitness == 'explicit'
+      end
+
       def to_hash
         {
           album: album,
           artist: artist,
           duration: duration,
-          explicitness: explicitness,
+          explicit: explicit?,
           genre: genre,
           link: link,
           name: name,
           number: number,
           preview: preview,
           store: store,
-          stremable: streamable,
+          streamable: streamable,
           track_id: track_id
         }
       end

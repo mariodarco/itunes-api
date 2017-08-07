@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-RSpec.describe ItunesApi::Music::Requests::Artist, type: :model do
-  let(:instance) { described_class.new(search_id, store) }
+RSpec.describe ItunesApi::Music::Requests::Search, type: :model do
+  let(:instance) { described_class.new(artist_name, store) }
 
-  let(:search_id) { 414_425 }
+  let(:artist_name) { 'Slayer' }
   let(:store) { 'gb' }
 
-  describe '#find_by_id' do
-    subject { VCR.use_cassette('artist') { instance.find_by_id } }
+  describe '#artists' do
+    subject { VCR.use_cassette('search') { instance.artists } }
 
     it { is_expected.to be_a Array }
     it { is_expected.to all be_a ItunesApi::Music::Results::Artist }
@@ -15,10 +15,10 @@ RSpec.describe ItunesApi::Music::Requests::Artist, type: :model do
     it 'returns the expected result' do
       expect(subject.first.attributes).to eql [
         5_453,
-        search_id,
+        414_425,
         'Metal',
         'https://itunes.apple.com/gb/artist/slayer/id414425?uo=4',
-        'Slayer',
+        artist_name,
         'gb'
       ]
     end

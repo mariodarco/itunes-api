@@ -55,7 +55,11 @@ RSpec.describe ItunesApi::Music::Album, type: :model do
     'https://itunes.apple.com/gb/album/reign-in-blood/id1038991417?uo=4'
   end
 
-  let(:artwork_link) { 'http://.../source/100x100bb.jpg' }
+  let(:artwork_link) do
+    'http://is4.mzstatic.com/image/thumb/Music3/v4/ee/f9/ed/' \
+      'eef9ed9f-5539-6356-319c-d91676811eab/source/100x100bb.jpg'
+  end
+
   let(:explicitness) { '' }
   let(:release_on) { Date.parse '1986-10-07' }
   let(:store) { 'gb' }
