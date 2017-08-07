@@ -15,8 +15,6 @@ module ItunesApi
                        :streamable,
                        :track_id
 
-      alias streamable? streamable
-
       class << self
         def find_by_collection_id(collection_id, store)
           songs(collection_id, store).map { |song| new(*song.attributes) }
@@ -39,6 +37,12 @@ module ItunesApi
         explicitness == 'explicit'
       end
 
+      def streamable?
+        return false if streamable.nil?
+
+        streamable
+      end
+
       def to_hash
         {
           album: album,
@@ -51,7 +55,7 @@ module ItunesApi
           number: number,
           preview: preview,
           store: store,
-          streamable: streamable,
+          streamable: streamable?,
           track_id: track_id
         }
       end
