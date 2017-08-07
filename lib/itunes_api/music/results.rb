@@ -6,7 +6,6 @@ module ItunesApi
   module Music
     # Starting module for result wrappers
     module Results
-
     end
   end
 end

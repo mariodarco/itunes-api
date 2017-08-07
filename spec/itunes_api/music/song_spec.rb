@@ -22,7 +22,9 @@ RSpec.describe ItunesApi::Music::Song, type: :model do
 
   describe '.find_by_track_id' do
     subject do
-      VCR.use_cassette('song') { described_class.find_by_track_id(track_id, store) }
+      VCR.use_cassette('song') do
+        described_class.find_by_track_id(track_id, store)
+      end
     end
 
     it { is_expected.to be_a described_class }

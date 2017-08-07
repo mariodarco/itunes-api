@@ -23,7 +23,9 @@ RSpec.describe ItunesApi::Music::Album, type: :model do
 
   describe '.find_by_apple_id' do
     subject do
-      VCR.use_cassette('albums') { described_class.find_by_apple_id(apple_id, store) }
+      VCR.use_cassette('albums') do
+        described_class.find_by_apple_id(apple_id, store)
+      end
     end
 
     it { is_expected.to be_a Array }

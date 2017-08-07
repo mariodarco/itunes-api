@@ -76,7 +76,6 @@ RSpec.describe ItunesApi::Music do
   end
 end
 
-
 RSpec.describe ItunesApi::Music do
   let(:track_id) { 1_038_991_877 }
   let(:store) { :gb }
