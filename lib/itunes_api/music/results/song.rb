@@ -70,9 +70,13 @@ module ItunesApi
         private
 
         def track_lenght(milliseconds)
-          minutes, milliseconds = milliseconds.divmod(1000 * 60)
-          seconds = milliseconds / 1000
-          "#{minutes}:#{seconds}"
+          if milliseconds.to_i > 0
+            minutes, milliseconds = milliseconds.divmod(1000 * 60)
+            seconds = milliseconds / 1000
+            "#{minutes}:#{seconds}"
+          else
+            '-:--'
+          end
         end
       end
     end
