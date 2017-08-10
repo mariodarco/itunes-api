@@ -25,11 +25,11 @@ module ItunesApi
 
         def query
           {
-            attribute: 'artistTerm',
+            attribute: :artistTerm,
             country: store.to_s.upcase,
-            entity: 'musicArtist',
+            entity: :musicArtist,
             limit: LIMIT,
-            media: 'music',
+            media: :music,
             term: artist_name
           }
         end

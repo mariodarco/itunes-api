@@ -15,6 +15,8 @@ module ItunesApi
 
     def parsed_response
       JSON.parse(response.body)
+    rescue JSON::ParserError
+      { 'results' => [] }
     end
 
     def response

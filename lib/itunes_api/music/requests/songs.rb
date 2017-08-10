@@ -22,10 +22,10 @@ module ItunesApi
         def query
           {
             country: store.to_s.upcase,
-            entity: 'song',
+            entity: :song,
             id: search_id,
             limit: LIMIT,
-            sort: 'trackNumber'
+            sort: :trackNumber
           }
         end
       end
