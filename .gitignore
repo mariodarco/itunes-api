@@ -2,7 +2,6 @@
 /.yardoc
 /_yardoc/
 /doc/
-/Gemfile.lock
 /pkg/
 /spec/reports/
 /tmp/
