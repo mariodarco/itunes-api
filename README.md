@@ -94,7 +94,7 @@ ItunesApi::Music.find_albums_by_apple_id(265766061, :es)
 Ruby version:
 
 ```text
-2.4.2
+2.4.3
 ```
 
 Fork the project, clone the repository and bundle:
