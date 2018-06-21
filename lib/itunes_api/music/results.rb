@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'results/album'
 require_relative 'results/artist'
 require_relative 'results/song'

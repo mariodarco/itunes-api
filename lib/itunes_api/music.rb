@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'request'
 require_relative 'music/requests'
 require_relative 'music/results'

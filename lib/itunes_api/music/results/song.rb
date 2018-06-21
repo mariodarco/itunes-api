@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 module ItunesApi
   module Music
     module Results
       # Wrapper for song search results.
       class Song
         attr_reader_init :data, :store
-        private :data
 
         def album
           @album ||= data['collectionName']
@@ -70,7 +71,7 @@ module ItunesApi
         private
 
         def track_lenght(milliseconds)
-          if milliseconds.to_i > 0
+          if milliseconds.to_i.positive?
             minutes, milliseconds = milliseconds.divmod(1000 * 60)
             seconds = milliseconds / 1000
             "#{minutes}:#{seconds}"

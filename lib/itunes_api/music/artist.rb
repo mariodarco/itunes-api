@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ItunesApi
   module Music
     # Artist or Band from the Apple catalog

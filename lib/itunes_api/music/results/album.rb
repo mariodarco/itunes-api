@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 module ItunesApi
   module Music
     module Results
       # Wrapper for album search results.
       class Album
         attr_reader_init :data, :store
-        private :data
 
         def artist
           @artist ||= data['artistName']

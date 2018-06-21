@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ItunesApi
   module Music
     # Wrapper for song results.
