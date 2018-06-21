@@ -1,6 +1,6 @@
 # ItunesApi
 
-[![Gem Version](https://badge.fury.io/rb/itunes_api.svg)](https://badge.fury.io/rb/itunes_api) [![Dependency Status](https://gemnasium.com/badges/github.com/mariodarco/itunes-api.svg)](https://gemnasium.com/github.com/mariodarco/itunes-api) [![CircleCI](https://circleci.com/gh/mariodarco/itunes-api/tree/master.svg?style=shield)](https://circleci.com/gh/mariodarco/itunes-api/tree/master) [![Maintainability](https://api.codeclimate.com/v1/badges/2f78e613782a1d0be4f0/maintainability)](https://codeclimate.com/github/mariodarco/itunes-api/maintainability)
+[![Gem Version](https://badge.fury.io/rb/itunes_api.svg)](https://badge.fury.io/rb/itunes_api) [![CircleCI](https://circleci.com/gh/mariodarco/itunes-api/tree/master.svg?style=shield)](https://circleci.com/gh/mariodarco/itunes-api/tree/master) [![Maintainability](https://api.codeclimate.com/v1/badges/2f78e613782a1d0be4f0/maintainability)](https://codeclimate.com/github/mariodarco/itunes-api/maintainability)
 
 A simple interface for the Itunes Api.
 
@@ -94,7 +94,7 @@ ItunesApi::Music.find_albums_by_apple_id(265766061, :es)
 Ruby version:
 
 ```text
-2.4.3
+2.5.1
 ```
 
 Fork the project, clone the repository and bundle:
