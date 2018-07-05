@@ -1,8 +1,11 @@
 require 'spec_helper'
 
 RSpec.describe ItunesApi::Music do
+  let(:apple_id) { 414_425 }
+  let(:collection_id) { 1_038_991_417 }
   let(:name) { 'Slayer' }
   let(:store) { :gb }
+  let(:track_id) { 1_038_991_877 }
 
   describe '.find_by_name' do
     subject do
@@ -18,11 +21,6 @@ RSpec.describe ItunesApi::Music do
       expect(subject.map(&:name)).to all be_include(name)
     end
   end
-end
-
-RSpec.describe ItunesApi::Music do
-  let(:apple_id) { 414_425 }
-  let(:store) { :gb }
 
   describe '.find_by_apple_id' do
     subject do
@@ -48,11 +46,6 @@ RSpec.describe ItunesApi::Music do
     it { is_expected.to be_a(Array) }
     it { is_expected.to all be_a(ItunesApi::Music::Album) }
   end
-end
-
-RSpec.describe ItunesApi::Music do
-  let(:collection_id) { 1_038_991_417 }
-  let(:store) { :gb }
 
   describe '.find_by_collection_id' do
     subject do
@@ -74,19 +67,22 @@ RSpec.describe ItunesApi::Music do
     it { is_expected.to be_a(Array) }
     it { is_expected.to all be_a(ItunesApi::Music::Song) }
   end
-end
-
-RSpec.describe ItunesApi::Music do
-  let(:track_id) { 1_038_991_877 }
-  let(:store) { :gb }
 
   describe '.find_by_track_id' do
+    let(:finder) { described_class.find_by_track_id(track_id, store) }
+
     subject do
       VCR.use_cassette('song') do
-        described_class.find_by_track_id(track_id, store)
+        finder
       end
     end
 
     it { is_expected.to be_a(ItunesApi::Music::Song) }
+
+    context 'when a default store is not passed' do
+      let(:finder) { described_class.find_by_track_id(track_id) }
+
+      it { is_expected.to be_a(ItunesApi::Music::Song) }
+    end
   end
 end
