@@ -10,7 +10,7 @@ RSpec.describe ItunesApi::Music::Results::Song, type: :model do
       'previewUrl' => preview_link,
       'primaryGenreName' => 'Metal',
       'trackExplicitness' => 'notExplicit',
-      'trackTimeMillis' => 222_377,
+      'trackTimeMillis' => track_time,
       'trackViewUrl' => link,
       'trackName' => 'Raining Blood',
       'trackNumber' => 10,
@@ -47,6 +47,8 @@ RSpec.describe ItunesApi::Music::Results::Song, type: :model do
 
   let(:store) { 'gb' }
 
+  let(:track_time) { 222_377 }
+
   it { expect(instance.album).to eql 'Reign In Blood' }
   it { expect(instance.artist).to eql 'Slayer' }
   it { expect(instance.attributes).to eql expected_attributes }
@@ -60,4 +62,10 @@ RSpec.describe ItunesApi::Music::Results::Song, type: :model do
   it { expect(instance.store).to eql 'gb' }
   it { expect(instance.streamable).to eql true }
   it { expect(instance.track_id).to eql 1_038_991_417 }
+
+  context 'when data has no valid Track Time' do
+    let(:track_time) { '' }
+
+    it { expect(instance.duration).to eql '-:--' }
+  end
 end
