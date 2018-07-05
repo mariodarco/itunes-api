@@ -12,4 +12,18 @@ RSpec.describe ItunesApi do
   it 'has a version' do
     expect(ItunesApi::VERSION).to eql '2.3.2'
   end
+
+  describe '.configure' do
+    let(:country_code) { ItunesApi::Configuration.instance.country_code }
+
+    before do
+      ItunesApi.configure do |config|
+        config.country_code = :it
+      end
+    end
+
+    it 'yields a configuration instance with given settings' do
+      expect(country_code).to eql :it
+    end
+  end
 end

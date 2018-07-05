@@ -22,5 +22,19 @@ RSpec.describe ItunesApi::Music::Requests::Artist, type: :model do
         'gb'
       ]
     end
+
+    context 'when receiving a bad response' do
+      subject { instance.find_by_id }
+
+      let(:connection) { double(Faraday, get: response) }
+      let(:response) { double(Faraday::Response, body: 'invalidJson') }
+      let(:result) { { 'results' => [] } }
+
+      before do
+        allow(Faraday).to receive(:new).and_return(connection)
+      end
+
+      it { is_expected.to eql [] }
+    end
   end
 end
