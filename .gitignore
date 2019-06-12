@@ -2,3 +2,5 @@
 /coverage/
 /pkg/
 /tmp/
+.ruby-version
+*.lock

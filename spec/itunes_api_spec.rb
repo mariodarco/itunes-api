@@ -10,7 +10,7 @@ RSpec.describe ItunesApi do
   end
 
   it 'has a version' do
-    expect(ItunesApi::VERSION).to eql '2.3.2'
+    expect(ItunesApi::VERSION).not_to be nil
   end
 
   describe '.configure' do
