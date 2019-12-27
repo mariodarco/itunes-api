@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    itunes_api (2.4.0)
+    itunes_api (2.4.1)
       faraday
       selfies
 
