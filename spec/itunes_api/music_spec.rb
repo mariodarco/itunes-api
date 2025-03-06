@@ -20,7 +20,7 @@ RSpec.describe ItunesApi::Music do
     it { is_expected.to all be_a(ItunesApi::Music::Artist) }
 
     it 'has relevant results' do
-      expect(subject.map(&:name)).to all be_include(name)
+      expect(subject.map(&:name)).to all include(name)
     end
   end
 
@@ -71,13 +71,13 @@ RSpec.describe ItunesApi::Music do
   end
 
   describe '.find_by_track_id' do
-    let(:finder) { described_class.find_by_track_id(track_id, store) }
-
     subject do
       VCR.use_cassette('song') do
         finder
       end
     end
+
+    let(:finder) { described_class.find_by_track_id(track_id, store) }
 
     it { is_expected.to be_a(ItunesApi::Music::Song) }
 

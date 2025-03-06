@@ -26,9 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'faraday'
   spec.add_dependency 'selfies'
 
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'vcr'
+  spec.metadata['rubygems_mfa_required'] = 'true'
+  spec.required_ruby_version = '>= 3.4'
 end
