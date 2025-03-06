@@ -1,9 +1,12 @@
+plugins:
+  - rubocop-rake
 AllCops:
   DisplayCopNames: true
+  NewCops: enable
   Exclude:
     - bin/**/*
     - vendor/**/*
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.4
 
 Layout/LineLength:
   Max: 100
