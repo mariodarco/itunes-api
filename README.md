@@ -1,7 +1,5 @@
 # ItunesApi
 
-[![Gem Version](https://badge.fury.io/rb/itunes_api.svg)](https://badge.fury.io/rb/itunes_api) [![CircleCI](https://circleci.com/gh/mariodarco/itunes-api.svg?style=svg)](https://circleci.com/gh/mariodarco/itunes-api) [![Maintainability](https://api.codeclimate.com/v1/badges/2f78e613782a1d0be4f0/maintainability)](https://codeclimate.com/github/mariodarco/itunes-api/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/2f78e613782a1d0be4f0/test_coverage)](https://codeclimate.com/github/mariodarco/itunes-api/test_coverage)
-
 A simple interface for the Itunes Api.
 
 ## Installation
@@ -94,7 +92,7 @@ ItunesApi::Music.find_albums_by_apple_id(265766061, :es)
 Ruby version:
 
 ```text
->= 2.5
+>= 3.1
 ```
 
 Fork the project, clone the repository and bundle:
