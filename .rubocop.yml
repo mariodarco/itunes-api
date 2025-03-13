@@ -3,6 +3,8 @@ AllCops:
   Exclude:
     - bin/**/*
     - vendor/**/*
+  NewCops: enable
+  SuggestExtensions: false
   TargetRubyVersion: 3.1
 
 Layout/LineLength:

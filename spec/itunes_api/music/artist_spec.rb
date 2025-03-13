@@ -7,12 +7,12 @@ RSpec.describe ItunesApi::Music::Artist, type: :model do
     subject { described_class.find_by_name(name, store) }
 
     let(:attributes_slayer) { ['', '', '', '', 'Slayer', ''] }
-    let(:attributes_slayer_2) { ['', '', '', '', 'Princess Slayer', ''] }
+    let(:attributes_slayer2) { ['', '', '', '', 'Princess Slayer', ''] }
     let(:slayer) { double(result_class, attributes: attributes_slayer) }
-    let(:slayer_2) { double(result_class, attributes: attributes_slayer_2) }
+    let(:slayer2) { double(result_class, attributes: attributes_slayer2) }
     let(:result_class) { ItunesApi::Music::Results::Artist }
     let(:result_names) { ['Slayer', 'Princess Slayer'] }
-    let(:results) { [slayer, slayer_2] }
+    let(:results) { [slayer, slayer2] }
     let(:name) { 'Slayer' }
     let(:store) { 'gb' }
 

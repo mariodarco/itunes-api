@@ -71,7 +71,7 @@ module ItunesApi
       def build_availability
         prefix = pre_release? ? 'pre_release_' : ''
         suffix = apple_music? ? 'streaming' : 'sale'
-        "#{prefix}#{suffix}".to_sym
+        :"#{prefix}#{suffix}"
       end
 
       def pre_release?
