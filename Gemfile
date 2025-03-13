@@ -15,6 +15,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-core'
   gem 'rubocop'
+  gem 'rubocop-rake'
   gem 'vcr'
 end
 

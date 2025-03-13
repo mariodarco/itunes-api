@@ -1,3 +1,6 @@
+plugins:
+  - rubocop-rake
+
 AllCops:
   DisplayCopNames: true
   Exclude:

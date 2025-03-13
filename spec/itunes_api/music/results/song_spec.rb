@@ -59,11 +59,11 @@ RSpec.describe ItunesApi::Music::Results::Song, type: :model do
   it { expect(instance.genre).to eql 'Metal' }
   it { expect(instance.link).to eql link }
   it { expect(instance.name).to eql 'Raining Blood' }
-  it { expect(instance.number).to eql 10 }
+  it { expect(instance.number).to be 10 }
   it { expect(instance.preview).to eql preview_link }
   it { expect(instance.store).to eql 'gb' }
-  it { expect(instance.streamable).to eql true }
-  it { expect(instance.track_id).to eql 1_038_991_417 }
+  it { expect(instance.streamable).to be true }
+  it { expect(instance.track_id).to be 1_038_991_417 }
 
   context 'when data has no valid Track Time' do
     let(:track_time) { '' }

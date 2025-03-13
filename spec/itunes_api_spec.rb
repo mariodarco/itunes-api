@@ -8,24 +8,24 @@ RSpec.describe ItunesApi do
   end
 
   it 'has a limit' do
-    expect(ItunesApi::LIMIT).to eql 200
+    expect(ItunesApi::LIMIT).to be 200
   end
 
   it 'has a version' do
-    expect(ItunesApi::VERSION).not_to be nil
+    expect(ItunesApi::VERSION).not_to be_nil
   end
 
   describe '.configure' do
     let(:country_code) { ItunesApi::Configuration.instance.country_code }
 
     before do
-      ItunesApi.configure do |config|
+      described_class.configure do |config|
         config.country_code = :it
       end
     end
 
     it 'yields a configuration instance with given settings' do
-      expect(country_code).to eql :it
+      expect(country_code).to be :it
     end
   end
 end

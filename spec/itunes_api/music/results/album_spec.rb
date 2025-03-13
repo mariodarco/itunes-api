@@ -45,12 +45,12 @@ RSpec.describe ItunesApi::Music::Results::Album, type: :model do
   it { expect(instance.artist).to eql 'Slayer' }
   it { expect(instance.artwork).to eql artwork_link }
   it { expect(instance.attributes).to eql expected_attributes }
-  it { expect(instance.collection_id).to eql 1_038_991_417 }
+  it { expect(instance.collection_id).to be 1_038_991_417 }
   it { expect(instance.explicitness).to eql 'explicit' }
   it { expect(instance.genre).to eql 'Metal' }
   it { expect(instance.link).to eql link }
   it { expect(instance.name).to eql 'Reign In Blood' }
   it { expect(instance.release_on).to eql release_on }
   it { expect(instance.store).to eql 'gb' }
-  it { expect(instance.track_count).to eql 10 }
+  it { expect(instance.track_count).to be 10 }
 end

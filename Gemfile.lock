@@ -74,6 +74,9 @@ GEM
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.38.1)
       parser (>= 3.3.1.0)
+    rubocop-rake (0.7.1)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.72.1)
     ruby-progressbar (1.13.0)
     selfies (1.5.1)
     stringio (3.1.5)
@@ -97,6 +100,7 @@ DEPENDENCIES
   rspec
   rspec-core
   rubocop
+  rubocop-rake
   vcr
 
 RUBY VERSION

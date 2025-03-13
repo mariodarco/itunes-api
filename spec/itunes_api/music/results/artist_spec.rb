@@ -23,8 +23,8 @@ RSpec.describe ItunesApi::Music::Results::Artist, type: :model do
   let(:search_term) { 'Iron Maiden' }
   let(:store) { 'gb' }
 
-  it { expect(instance.amg_id).to eql 5_453 }
-  it { expect(instance.apple_id).to eql 414_425 }
+  it { expect(instance.amg_id).to be 5_453 }
+  it { expect(instance.apple_id).to be 414_425 }
   it { expect(instance.attributes).to eql expected_attributes }
   it { expect(instance.genre).to eql 'Metal' }
   it { expect(instance.link).to eql link }
